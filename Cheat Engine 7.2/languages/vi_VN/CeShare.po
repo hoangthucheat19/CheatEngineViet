@@ -1,0 +1,390 @@
+#: frmCEShareCheatBrowser.TTrainerForm.Caption
+msgid "Cheat Browser"
+msgstr "Trình Duyệt Cheat"
+
+#: frmCEShareCheatBrowser.CELabel.Caption
+msgid "Processname:"
+msgstr "Tiến trình:"
+
+#: frmCEShareCheatBrowser.Title.Caption
+msgid "Title"
+msgstr "Tiêu đề"
+
+#: frmCEShareCheatBrowser.Author.Caption
+msgid "Author"
+msgstr "Tác giả"
+
+#: frmCEShareCheatBrowser.Public.Caption
+msgid "Public"
+msgstr "Xuất bản"
+
+#: frmCEShareCheatBrowser.Score.Caption
+msgid "Score"
+msgstr "Điểm"
+
+#: frmCEShareCheatBrowser.Version.Caption
+msgid "Version independent"
+msgstr "Phiên bản"
+
+#: frmCEShareCheatBrowser.Signed.Caption
+#msgid "Signed"
+#msgstr "Đã ký"
+
+#: frmCEShareCheatBrowser.Match.Caption
+msgid "% Match"
+msgstr "Phù hợp"
+
+#: frmCEShareCheatBrowser.btnLoadTable.Caption
+msgid "    Load    "
+msgstr "    Tải    "
+
+#: frmCEShareCheatBrowser.btnAddViewComments.Caption
+msgid "Add/View Comments"
+msgstr "Thêm/xem ghi chú"
+
+#: frmCEShareCheatBrowser.lblRate.Caption
+msgid "Rate:"
+msgstr "Đánh giá:"
+
+#: frmCEShareCheatBrowser.btnViewHistory.Caption
+msgid "View History"
+msgstr "Xem lịch sử"
+
+#: frmCEShareCheatBrowser.lblContact.Hint
+msgid "For contacting the table owner or site admin"
+msgstr "Để liên hệ với chủ bảng hoặc quản trị web"
+
+#: frmCEShareCheatBrowser.lblContact.Caption
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: frmCEShareCheatBrowser.miLoad.Caption
+msgid "Load Table"
+msgstr "Tải bảng"
+
+#: frmCEShareCheatBrowser.miViewComments.Caption
+msgid "View Comments"
+msgstr "Xem ghi chú"
+
+#: frmCEShareCheatBrowser.miLoginToSeeMoreOptions.Caption
+msgid "Login to see more options"
+msgstr "Đăng nhập để xem thêm tùy chọn"
+
+#: frmCEShareCheatBrowser.miUpdateTable.Caption
+#: frmCEShareUpdateOrNew_1.btnChoose.Caption
+msgid "Update table"
+msgstr "Cập nhật bảng"
+
+#: frmCEShareCheatBrowser.miDeleteTable.Caption
+msgid "Delete table"
+msgstr "Xóa bảng"
+
+#: frmCEShareCheatBrowser.miManageAccessList.Caption
+msgid "Manage accesslist"
+msgstr "Quản lý danh sách truy cập"
+
+#: ceshare_frmComments.lblPrevious25.Caption
+msgid "Previous 25"
+msgstr "Trước 25"
+
+#: ceshare_frmComments.lblNext25.Caption
+msgid "Next 25"
+msgstr "Tiếp 25"
+
+#: ceshare_frmComments.btnSend.Caption
+msgid "   Send   "
+msgstr "   Gửi   "
+
+#: ceshare_initiaISetup.Caption
+msgid "CEShare Initial Setup"
+msgstr "Thiết lập ban đầu"
+
+#: ceshare_initiaISetup.CELabel1.Caption
+msgid "CEShare community URL:"
+msgstr "Liên kết cộng đồng chia sẻ："
+
+#: ceshare_initiaISetup.CELabel2.Caption
+msgid "By entering a CEShare URL you will be able to upload and download Cheat Tables from a ceshare server community"
+msgstr "Bằng cách nhập liên kết chia sẻ, bạn có thể tải lên và xuống bảng cheat từ cộng đồng"
+
+#: ceshare_initiaISetup.CELabel3.Caption
+msgid ""
+"Disclaimer: These are third-party servers. They are not owned or maintained by the Cheat Engine project, and no warranty or responsiblity regarding their content is given.  DMCA Claims need to be send to the appropriate administrator of the server who will be reachable by the link in the bottom right part of a cheat table entry\n"
+"\n"
+"Please contact the respective server owner for further inquiries."
+msgstr ""
+"Từ chối trách nhiệm: đây là máy chủ của bên thứ ba. Chúng không thuộc cheat engine và không có trách nhiệm nào liên quan đến nội dung của chúng. Các xác nhận quyền sở hữu dmca cần được gửi tới quản trị viên thích hợp của máy chủ, người này sẽ có thể truy cập được bằng liên kết ở phần dưới cùng bên phải của mục nhập bảng gian lận\n"
+"\n"
+"Vui lòng liên hệ với người sở hữu máy chủ tương ứng để có thêm thắc mắc."
+
+#: ceshare_initiaISetup.CELabel4.Caption
+msgid "Click cancel or leave empty if you don't wish to use this"
+msgstr "Bấm hủy hoặc để trống nếu bạn không muốn sử dụng"
+
+#: ceshare_initiaISetup.CEButton1.Caption
+msgid "OK"
+msgstr "OK"
+
+#: ceshare_initiaISetup.CEButton2.Caption
+msgid "Cancel"
+msgstr "Hủy"
+
+#: frmCESharePublishCheat.Caption
+msgid "Publish New Cheat"
+msgstr "Xuất bản cheat mới"
+
+#: frmCESharePublishCheat.lblTitle.Caption
+msgid "Title:"
+msgstr "Tiêu đề:"
+
+#: frmCESharePublishCheat.lblHeaderMD5Text.Caption
+msgid "Header MD5:"
+msgstr "Tiêu đề md5:"
+
+#: frmCESharePublishCheat.cbNeedsFullFilrHash.Caption
+msgid "Needs full file hash"
+msgstr "Cần toàn bộ tệp băm"
+
+#: frmCESharePublishCheat.lblFullHeaderMD5Text.Caption
+msgid "Full file hash:"
+msgstr "Toàn bộ tệp băm"
+
+#: frmCESharePublishCheat.cbUseSecondaryModule.Caption
+msgid "Needs secondary modulecheck"
+msgstr "Cần kiểm tra mô-đun phụ"
+
+#: frmCESharePublishCheat.lblModulename.Caption
+msgid "Modulename"
+msgstr "Tên mô-đun"
+
+#: frmCESharePublishCheat.lblURL.Caption
+msgid "URL (Optional)"
+msgstr "Liên kết (không bắt buộc)"
+
+#: frmCESharePublishCheat.cbPublic.Caption
+msgid "Allow everyone to edit this table"
+msgstr "Cho phép mọi người chỉnh sửa bảng này"
+
+#: frmCESharePublishCheat.cbPublic.Hint
+msgid "When this is enabled will let EVERYONE be able to edit/replace your table.  So be careful with enabling this and understand that once someone else has modified the table, you will not be able to delete it anymore"
+msgstr "Khi được bật sẽ cho phép mọi người có thể chỉnh sửa/thay thế bảng của bạn. Vì vậy, hãy cẩn thận với việc bật tính năng này và hiểu rằng một khi người khác đã sửa đổi bảng, bạn sẽ không thể xóa nó nữa"
+
+#: frmCESharePublishCheat.btnPublish.Caption
+msgid "Publish"
+msgstr "Xuất bản"
+
+#: frmCEShareUpdateOrNew_1.Caption
+msgid "Update/publish"
+msgstr "Cập nhật/xuất bản"
+
+#: frmCEShareUpdateOrNew_1.rbPublish.Caption
+msgid "Publish new table"
+msgstr "Xuất bản bảng mới"
+
+#: frmCEShareUpdateOrNew_1.btnChoose.Caption
+msgid "Update table"
+msgstr "Cập nhật bảng"
+
+#: ceshare_permissions.Caption
+msgid "Update Permissions"
+msgstr "Cập nhật quyền"
+
+#: ceshare_permissions.lblIDTxt.Caption
+msgid "ID"
+msgstr "Id"
+
+#: ceshare_permissions.lblOwnerTxt.Caption
+msgid "Owner"
+msgstr "Chủ sở hữu"
+
+#: ceshare_permissions.mrOK.Caption
+msgid "  OK  "
+msgstr "  Ok  "
+
+#: ceshare_permissions.btnAddUser.Caption
+msgid "Add user"
+msgstr "Thêm người dùng"
+
+#: miCESHARETopMenuItem.Caption
+msgid "CE Share"
+msgstr "Chia sẻ"
+
+#: miCheckForCheats.Caption
+msgid "Check for mods/cheats for current process"
+msgstr "Kiểm tra cheat cho tiến trình này"
+
+#: miRequestCheats.Caption
+msgid "Request and check other requests for mods/cheats for current process"
+msgstr "Yêu cầu và kiểm tra yêu cầu cheat cho tiến trình này"
+
+#: miLoginToSeeMoreOptions.Caption
+msgid "Publish/Update table"
+msgstr "Xuất hoặc cập nhật bảng"
+
+#: miViewAllTables.Caption
+msgid "View all available tables"
+msgstr "Xem tất cả bảng có sẵn"
+
+#: sf.SettingsTreeView.Items.insert
+msgid "CEShare"
+msgstr "Chia sẻ cheat"
+
+#: lblCEShareLabel.Caption
+msgid "CEShare community URL"
+msgstr "Liên kết cộng đồng chia sẻ"
+
+#: d.Caption
+msgid "Secondary identifier code"
+msgstr "Mã định danh phụ"
+
+#: btnAllow.Caption
+msgid "Allow"
+msgstr "Cho phép"
+
+#: header.caption
+msgid "This process needs a special identifier to set it apart from others with the same name. To generate this identifier the below code is needed. Do you agree with the execution of this code to generate the identifier?"
+msgstr "Tiến trình này cần một số nhận dạng đặc biệt để làm cho nó khác biệt với những người khác có cùng tên. Để tạo mã định danh này, cần có mã dưới đây. Bạn có đồng ý với việc thực thi mã này để tạo định danh không?"
+
+#: Error
+msgid "Error:"
+msgstr "Lỗi:"
+
+#: IRFS
+msgid "Invalid reply from server:"
+msgstr "Trả lời từ máy chủ không hợp lệ:"
+
+#: SDNR
+msgid "Server did not respond"
+msgstr "Máy chủ đã không phản hồi"
+
+#: ceshare_account-f.Caption
+msgid "CEShare Login"
+msgstr "Bảng Đăng Nhập"
+
+#: ceshare_account-lblUsername.Caption
+msgid "Username"
+msgstr "Tài khoản"
+
+#: ceshare_account-lblPassword.Caption
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: ceshare_account-lblRegister.Caption
+msgid "Register"
+msgstr "Đăng ký"
+
+#: ceshare_account-cbLogoutWhenLoadingTables.Caption
+msgid "Logout when loading ceshare tables"
+msgstr "Đăng xuất khi đang tải bảng"
+
+#: ceshare_account-cbLogoutWhenLoadingTables.Hint
+msgid "When checked you will get logged out when loading a ceshare table. This to prevent malicious tables from using your account"
+msgstr "Khi được chọn, bạn sẽ đăng xuất khi tải bảng. Điều này để ngăn các bảng độc hại sử dụng tài khoản của bạn"
+
+#: ceshare_permissions
+msgid "Are you sure you wish to change the owner?"
+msgstr "Bạn có chắc muốn thay đổi chủ sở hữu không?"
+
+#: ceshare_permissions1
+msgid "Access has been updated"
+msgstr "Quyền truy cập đã được cập nhật"
+
+#: ceshare_publish
+msgid "Are you sure you wish to delete this table?"
+msgstr "Bạn có chắc chắn muốn xóa bảng này không?"
+
+#: ceshare_publish
+msgid "Table successfuly deleted"
+msgstr "Đã xóa bảng thành công"
+
+#: ceshare_publish
+msgid "processname is empty"
+msgstr "tên tiến trình trống"
+
+#: ceshare_publish
+msgid "title is empty"
+msgstr "tiêu đề trống"
+
+#: ceshare_publish
+msgid "data is empty"
+msgstr "dữ liệu trống"
+
+#: ceshare_publish
+msgid "description is empty"
+msgstr "mô tả trống"
+
+#: ceshare_publish
+msgid "Thank you, your table has been published"
+msgstr "Cảm ơn bạn, bảng của bạn đã được xuất bản"
+
+#: ceshare_publish
+msgid "No id given"
+msgstr "Không có id"
+
+#: ceshare_publish
+msgid "Thank you, your table has been updated"
+msgstr "Cảm ơn bạn, bảng của bạn đã được cập nhật"
+
+#: ceshare_publish
+msgid "Please select a cheattable to update"
+msgstr "Vui lòng chọn bảng cheat để cập nhật"
+
+#: ceshare_publish
+msgid "Invalid background update query list"
+msgstr "Danh sách truy vấn cập nhật nền không hợp lệ"
+
+#: ceshare_publish
+msgid "Are you sure you wish to let \'Everyone\' overwrite your table in the ceshare system ?"
+msgstr "Bạn có chắc chắn muốn để \'mọi người\' ghi đè lên bảng của bạn trong hệ thống chia sẻ không?"
+
+#: ceshare_publish
+msgid "Do you wish to sign this table?"
+msgstr "Bạn có muốn ký vào bảng này không?"
+
+#: ceshare_querycheats
+msgid "Contact who?"
+msgstr "Liên hệ với ai?"
+
+#: ceshare_querycheats
+msgid "Site Admin"
+msgstr "Quản trị web"
+
+#: ceshare_querycheats
+msgid "Table Owner"
+msgstr "Chủ của bảng"
+
+#: ceshare_querycheats
+msgid "Sorry, but there are currently no tables for this target. Perhaps you can be the first"
+msgstr "Xin lỗi, nhưng hiện không có bảng nào cho mục tiêu này. Có thể bạn là người đầu tiên"
+
+#: ceshare_requests
+msgid "Requests"
+msgstr "Bảng Yêu Cầu"
+
+#: ceshare_requests
+msgid "Score="
+msgstr "Điểm="
+
+#: ceshare_fulltablelist
+msgid "  and %d more tables..."
+msgstr "  và thêm %d bảng..."
+
+#: ceshare_fulltablelist
+msgid "All tables"
+msgstr "Danh Sách Bảng Cheat"
+
+#: ceshare_fulltablelist
+msgid "Search:"
+msgstr "Tìm kiếm:"
+
+#: ceshare_fulltablelist
+msgid "Previous (25)"
+msgstr "Trước (25)"
+
+#: ceshare_fulltablelist
+msgid "Next (25)"
+msgstr "Tiếp (25)"
+
+#: frmCEShareCheatBrowser.Signed.Caption frmCEShareCheatBrowser.Match.Caption
+msgid "% Match"
+msgstr "% Phù hợp"

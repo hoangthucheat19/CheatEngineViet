@@ -1,0 +1,135 @@
+#: monoscript-FITM
+msgid "Failure injecting the MonoDatacollector dll"
+msgstr "Tiêm MonoDatacollector dll thất bại"
+
+#: monoscript-DYWTL
+msgid "Do you wish to let the mono extention figure out the name and start address? If it's not a proper object this may crash the target."
+msgstr "Bạn có cho phép mở rộng đơn tìm ra tên và địa chỉ bắt đầu không? Nếu nó không phải là một đối tượng thích hợp, nó có thể làm hỏng mục tiêu."
+
+#: monoscript-IO
+msgid "Instances of "
+msgstr "Trường hợp của "
+
+#: monoscript-WTAJG
+msgid "Warning: These are just guesses. Validate them yourself"
+msgstr "Cảnh báo: đây chỉ là những phỏng đoán. Tự xác thực chúng"
+
+#: monoscript-AN
+msgid "address==nil"
+msgstr "địachỉ==nil"
+
+#: monoscript-Invoke
+msgid "Invoke "
+msgstr "Mời "
+
+#: monoscript-IA
+msgid "Instance address"
+msgstr "Địa chỉ phiên bản"
+
+#: monoscript-PW
+msgid "<Please wait...>"
+msgstr "<Vui lòng chờ...>"
+
+#: monoscript-Parameters
+msgid "Parameters"
+msgstr "Thông số"
+
+#: monoscript-OK
+msgid "OK"
+msgstr "OK"
+
+#: monoscript-Cancel
+msgid "Cancel"
+msgstr "Hủy"
+
+#: monoscript-Parameter
+msgid "parameter "
+msgstr "thông số "
+
+#: monoscript-INAVA
+msgid " is not a valid address"
+msgstr " không phải địa chỉ hợp lệ"
+
+#: monoscript-INAVV
+msgid "is not a valid value"
+msgstr "không phải giá trị hợp lệ"
+
+#: monoscript-IFT
+msgid "ILCode from %x to %x"
+msgstr "ILCode từ %x đến %x"
+
+#: monoscript-OX
+msgid "Offset %x"
+msgstr "Bù %x"
+
+#: monoscript-Resolve
+msgid "Resolve "
+msgstr "Giải quyết "
+
+#: monoscript-XSTS
+msgid "%x : %s (type: %s)"
+msgstr "%x : %s (loại: %s)"
+
+#: monoscript-AYSYWTE
+msgid "Are you sure you wish to expand the whole tree? This can take a while and Cheat Engine may look like it has crashed (It has not)"
+msgstr "Bạn có chắc muốn mở rộng toàn bộ cây không? Quá trình này có thể mất một lúc và cheat engine có thể trông như nó đã bị lỗi (nó chưa xảy ra)"
+
+#: monoscript-FTL
+msgid "Failure to launch"
+msgstr "Khởi chạy thất bại"
+
+#: monoscript-Mono
+msgid "Mono"
+msgstr "Đơn"
+
+#: monoscript-AMF
+msgid "Activate mono features"
+msgstr "Kích hoạt đặc tính đơn"
+
+#: monoscript-DM
+msgid "Dissect mono"
+msgstr "Phân tích đơn"
+
+#: monoscript-TMHFTI
+msgid "The mono handler failed to initialize"
+msgstr "Trình xử lý đơn không thể khởi chạy"
+
+#: monoscript-IPMN
+msgid "Invalid parameters (Methodname could not be determined)"
+msgstr "Tham số không hợp lệ (không thể xác định tên phương pháp)"
+
+#: monoscript-IPCN
+msgid "Invalid parameters (Classname could not be determined)"
+msgstr "Tham số không hợp lệ (không thể xác định được tên lớp)"
+
+#: monoscript-IPN
+msgid "Invalid parameters (name could not be determined)"
+msgstr "Tham số không hợp lệ (không thể xác định tên)"
+
+#: monoscript-CNBF
+msgid " could not be found"
+msgstr " không thể tìm thấy"
+
+#: monoscript-CNBJ
+msgid " could not be jitted"
+msgstr " không thể đùa được"
+
+#: monoscript-STFDNWY
+msgid "Sorry this feature does not work yet.  getStructureCount needs patching first."
+msgstr "Xin lỗi, tính năng này chưa hoạt động. getStructureCount cần vá trước."
+
+#: monoscript-Removing
+msgid "Removing "
+msgstr "Đang chuyển lại "
+
+#: monoscript-RS
+msgid "Reloading Structure "
+msgstr "Đang tải lại kiến trúc "
+
+#: monoscript-TC
+msgid "The class "
+msgstr "Lớp "
+
+#: monoscript-HNF
+msgid " has no fields"
+msgstr " không có lĩnh vực"

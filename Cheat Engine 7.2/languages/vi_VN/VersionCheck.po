@@ -1,0 +1,47 @@
+#: VC-U2CVICNEL
+msgid "Unable to check version (Invalid content, not enough lines)"
+msgstr "Không thể kiểm tra phiên bản (nội dung không hợp lệ, không đủ dòng)"
+
+#: VC-U2CVIC
+msgid "Unable to check version (Invalid content)"
+msgstr "Không thể kiểm tra phiên bản (nội dung không hợp lệ)"
+
+
+#: VC-CFNV
+msgid "Check for new version"
+msgstr "Kiểm tra phiên bản mới"
+
+#: VC-NCA
+msgid "Cheat Engine %s is available at www.cheatengine.org. Go there now?"
+msgstr "Cheat engine %s có sẵn tại cheatengine.org. Tới đó ngay?"
+
+
+#: VC-UP2D
+msgid "You are up to date. The latest version is %s"
+msgstr "Bạn đã cập nhật. Phiên bản mới nhất là %s"
+
+#: VC-WTF
+msgid "Unable to check version (Can't connect)"
+msgstr "Không thể kiểm tra phiên bản (không thể kết nối)"
+
+#: VC-UPDATETO
+msgid "Update to %s"
+msgstr "Cập nhật %s"
+
+#: VC-UPDATETO
+msgid "In how many days should I notify you again?"
+msgstr "Trong bao nhiêu ngày tôi sẽ nhắc bạn lần nữa?"
+
+#: VC-SETTINGS-TEXT
+msgid "Check for updates when Cheat Engine starts"
+msgstr "Kiểm tra cập nhật khi cheat engine khởi động"
+
+
+#: VC-INTERVAL
+msgid "Interval(days):"
+msgstr "khoảng(ngày):"
+
+
+
+
+

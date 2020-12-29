@@ -1,0 +1,283 @@
+#: java-AAF
+msgid "Auto assembler failed:"
+msgstr "Hợp ngữ tự động thất bại:"
+
+#: java-JEST
+msgid "Java:eventserver terminated"
+msgstr "Java:máy chủ sự kiện chấm dứt"
+
+#: java-JD
+msgid "Java:Disconnected"
+msgstr "Java:đã ngắt kết nối"
+
+#: java-JUER
+msgid "Java:Unexpected event received"
+msgstr "Java:đã nhận sự kiện không mong muốn"
+
+#: java-JEHT
+msgid "Java:Event handler terminating"
+msgstr "Java:kết thúc xử lý sự kiện"
+
+#: java-IJS
+msgid "Invalid java signature"
+msgstr "Chữ ký java không hợp lệ"
+
+#: java-ARTANS
+msgid "Array return types are not supported"
+msgstr "Kiểu mảng trả về không được hỗ trợ"
+
+#: java-PCDNM
+msgid "Parameter count does not match"
+msgstr "Số lượng tham số không khớp"
+
+#: java-SWNS
+msgid "Scantype was not set"
+msgstr "Kiểu quét chưa được đặt"
+
+#: java-Class
+msgid "Class"
+msgstr "Lớp"
+
+#: java-Method
+msgid "Method"
+msgstr "Phương thức"
+
+#: java-Position
+msgid "Position"
+msgstr "Định vị"
+
+#: java-MI
+msgid "More info %s.%s(%d)"
+msgstr "Thông tin thêm %s.%s(%d)"
+
+#: java-TDMATGV
+msgid "The following methods accessed the given variable"
+msgstr "Các phương thức sau đã truy cập vào biến đã cho"
+
+#: java-results
+msgid "results"
+msgstr "kết quả"
+
+#: java-OWWTJAILAS
+msgid "java_find_what_writes only works when the jvmti agent is launched at start"
+msgstr "java_find_what_writes chỉ hoạt động khi tác nhân jvmti được khởi chạy lúc bắt đầu"
+
+#: java-Generic
+msgid "  Generic="
+msgstr "  Chung="
+
+#: java-SC
+msgid "superclass="
+msgstr "lớp chồng="
+
+#: java-II
+msgid "---Implemented interfaces---"
+msgstr "---Các giao diện được triển khai---"
+
+#: java-Fields
+msgid "---Fields---"
+msgstr "---Lĩnh vực---"
+
+#: java-Methods
+msgid "---Methods---"
+msgstr "---Phương thức---"
+
+#: java-SFC
+msgid "Search for class..."
+msgstr "Tìm kiếm lớp..."
+
+#: java-SF
+msgid "Search for..."
+msgstr "Tìm kiếm cho..."
+
+#: java-NewS
+msgid "New Scan"
+msgstr "Quét mới"
+
+#: java-FS
+msgid "First Scan"
+msgstr "Quét đầu"
+
+#: java-JVScanner
+msgid "Java Variable Scanner"
+msgstr "Máy quét biến java"
+
+#: java-Value
+msgid "Value"
+msgstr "Giá trị"
+
+#: java-NextS
+msgid "Next Scan"
+msgstr "Quét tiếp"
+
+#: java-Found
+msgid "Found:"
+msgstr "Tìm thấy:"
+
+#: java-FWATV
+msgid "Find what accesses this value"
+msgstr "Tìm những gì truy cập giá trị này"
+
+#: java-Search
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#: java-FC
+msgid "Find Class"
+msgstr "Tìm lớp"
+
+#: java-Finddotdotdot
+msgid "Find..."
+msgstr "Tìm..."
+
+#: java-EM
+msgid "Edit method"
+msgstr "Chỉnh sửa phương thức"
+
+#: java-AJF
+msgid "Activate java features"
+msgstr "Kích hoạt các tính năng java"
+
+#: java-DJC
+msgid "Dissect java classes"
+msgstr "Phân tích các lớp java"
+
+#: java-JVScan
+msgid "Java variable scan"
+msgstr "Quét biến java"
+
+#: java-DCP
+msgid "Debug child processes"
+msgstr "Gỡ lỗi tiến trình con"
+
+#: java-JHDTI
+msgid "The java handler failed to initialize"
+msgstr "Trình xử lý java không khởi chạy được"
+
+#: java-SJMIEITTP
+msgid "Show java menu item even if the target process hasn't loaded jvm.dll (Used for the local setEnvironment option)"
+msgstr "Hiển thị mục menu java ngay cả khi tiến trình đích chưa tải jvm.dll (được dùng cho tùy chọn setEnosystem cục bộ)"
+
+#: javaclass-ICPTE
+msgid "Invalid constant pool tag encountered: "
+msgstr "Đã gặp thẻ nhóm hằng số không hợp lệ: "
+
+#: javaclass-Tag
+msgid " (tag="
+msgstr " (thẻ="
+
+#: javaclass-NAVC
+msgid "Not a valid classfile"
+msgstr "Không phải tệp lớp hợp lệ"
+
+#: javaclasseditor-ICNI
+msgid " is currently not implemented"
+msgstr " hiện không được thực hiện"
+
+#: javaclasseditor-WCNBUW
+msgid "wide can not be used with "
+msgstr "rộng không thể được sử dụng với "
+
+#: javaclasseditor-IAOPPF
+msgid "Invalid amount of parameters provided for "
+msgstr "Lượng thông số được cung cấp không hợp lệ cho "
+
+#: javaclasseditor-TL
+msgid "The label "
+msgstr "Nhãn "
+
+#: javaclasseditor-INYD
+msgid "is not yet defined"
+msgstr "vẫn chưa được định nghĩa"
+
+#: javaclasseditor-TIICNI
+msgid "This instruction is currently not implemented"
+msgstr "Cấu trúc này hiện không được triển khai"
+
+#: javaclasseditor-UI
+msgid "unknown instruction:"
+msgstr "Cấu trúc không xác định:"
+
+#: javaclasseditor-YCORI
+msgid "You can only replace instructions on an instruction boundary"
+msgstr "Bạn chỉ có thể thay thế các cấu trúc trên một ranh giới cấu trúc"
+
+#: javaclasseditor-StartIndex
+msgid "si="
+msgstr ""
+
+#: javaclasseditor-Offset
+msgid " offset="
+msgstr " bù="
+
+#: javaclasseditor-IL
+msgid "Insert line"
+msgstr "Chèn dòng"
+
+#: javaclasseditor-ITJAC
+msgid "Input the java assembly code you wish to insert at line "
+msgstr "Nhập mã java hợp ngữ bạn muốn chèn tại dòng "
+
+#: javaclasseditor-EL
+msgid "Edit line"
+msgstr "Chỉnh sửa dòng"
+
+#: javaclasseditor-DNL
+msgid "Define new label"
+msgstr "Định nghĩa nhãn mới"
+
+#: javaclasseditor-GALFL
+msgid "Give a labelname for line "
+msgstr "Đặt tên nhãn cho dòng "
+
+#: javaclasseditor-TIAALWTN
+msgid "There is already a label with this name"
+msgstr "Đã có một nhãn với tên này"
+
+#: javaclasseditor-OBSNBS
+msgid "old bsize=%d new bsize=%d"
+msgstr "k.thước b cũ=%d k.thước b mới=%d"
+
+#: javaclasseditor-OSNS
+msgid "old size=%d new size=%d"
+msgstr "k.thước cũ=%d k.thước mới=%d"
+
+#: javaclasseditor-Method
+msgid "Method: "
+msgstr "Phương thức: "
+
+#: javaclasseditor-MS
+msgid "Max Stack"
+msgstr "Ngăn xếp tối đa"
+
+#: javaclasseditor-ML
+msgid "Max Locals"
+msgstr "Cục bộ tối đa"
+
+#: javaclasseditor-SC
+msgid "Save changes"
+msgstr "Lưu các thay đổi"
+
+#: javaclasseditor-Index
+msgid "Index"
+msgstr "Chỉ mục"
+
+#: javaclasseditor-BI
+msgid "ByteIndex"
+msgstr "Chỉ mục byte"
+
+#: javaclasseditor-Label
+msgid "Label"
+msgstr "Nhãn"
+
+#: javaclasseditor-Exception
+msgid "Exception"
+msgstr "Ngoại lệ"
+
+#: javaclasseditor-Instruction
+msgid "Instruction"
+msgstr "Cấu trúc"
+
+#: javaclasseditor-DL
+msgid "Define label"
+msgstr "Định nghĩa nhãn"

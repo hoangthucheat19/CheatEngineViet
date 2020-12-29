@@ -1,0 +1,183 @@
+#: pseudocodediagram-file
+msgid "File"
+msgstr "Tập tin"
+
+#: pseudocodediagram-lff
+msgid "Load from file"
+msgstr "Tải từ tệp"
+
+#: pseudocodediagram-stfywto
+msgid "Select the file you wish to open"
+msgstr "Chọn tập tin bạn muốn mở"
+
+#: pseudocodediagram-dfcc
+msgid "Diagram files (*.CEDIAG )|*.CEDIAG"
+msgstr "Tệp sơ đồ (*.CEDIAG )|*.CEDIAG"
+
+#: pseudocodediagram-stf
+msgid "Save to file"
+msgstr "Lưu thành tệp"
+
+#: pseudocodediagram-fitfywtstda
+msgid "Fill in the filename you wish to save this diagram as"
+msgstr "Điền vào tên tệp bạn muốn lưu sơ đồ này"
+
+#: pseudocodediagram-sdti
+msgid "Save diagram to image"
+msgstr "Lưu sơ đồ thành ảnh"
+
+#: pseudocodediagram-fitfywtstdi
+msgid "Fill in the filename you wish to save this diagram image"
+msgstr "Điền vào tên tệp bạn muốn lưu sơ đồ này thành ảnh"
+
+#: pseudocodediagram-pfpp
+msgid "PNG files (*.PNG )|*.PNG"
+msgstr "Tệp PNG (*.PNG )|*.PNG"
+
+#: pseudocodediagram-close
+msgid "Close"
+msgstr "Đóng"
+
+#: pseudocodediagram-display
+msgid "Display"
+msgstr "Hiển thị"
+
+#: pseudocodediagram-spfu2oc
+msgid "Show path from Ultimap1/2 or Codefilter"
+msgstr "Hiện đường dẫn từ ultimap 1/2 hoặc bộ lọc mã"
+
+#: pseudocodediagram-spftw
+msgid "Show path from tracer window"
+msgstr "Hiện đường dẫn từ cửa sổ dấu vết"
+
+#: pseudocodediagram-tsa
+msgid "Tracer starting at %8x (%s)"
+msgstr "Dấu vết bắt đầu bởi %8x (%s)"
+
+#: pseudocodediagram-tp
+msgid "Tracer paths"
+msgstr "Đường dẫn dấu vết"
+
+#: pseudocodediagram-wtwsbu
+msgid "Which tracer window shall be used?"
+msgstr "Cửa sổ dấu vết nào bạn sẽ dùng?"
+
+#: pseudocodediagram-ntwrv
+msgid "No tracerform with results visible"
+msgstr "Không có biểu mẫu dấu vết với kết quả hiển thị"
+
+#: pseudocodediagram-v
+msgid "View"
+msgstr "Xem"
+
+#: pseudocodediagram-z
+msgid "Zoom"
+msgstr "Thu phóng"
+
+#: pseudocodediagram-zi
+msgid "Zoom in"
+msgstr "Phóng to"
+
+#: pseudocodediagram-zo
+msgid "Zoom out"
+msgstr "Thu nhỏ"
+
+#: pseudocodediagram-e
+msgid "Edit"
+msgstr "Sửa"
+
+#: pseudocodediagram-nh
+msgid "new header"
+msgstr "tiêu đề mới"
+
+#: pseudocodediagram-nbbc
+msgid "new block background color (0xBBGGRR)"
+msgstr "màu nền khối mới (0xBBGGRR)"
+
+#: pseudocodediagram-sl
+msgid "Sources list"
+msgstr "Danh sách nguồn"
+
+#: pseudocodediagram-dl
+msgid "Destinations list"
+msgstr "Danh sách điểm đến"
+
+#: pseudocodediagram-be
+msgid "Block editor"
+msgstr "Trình sửa khối"
+
+#: pseudocodediagram-ok
+msgid "OK"
+msgstr "OK"
+
+#: pseudocodediagram-cancel
+msgid "Cancel"
+msgstr "Hủy"
+
+#: pseudocodediagram-gts
+msgid "Go to source"
+msgstr "Đi tới nguồn"
+
+#: pseudocodediagram-gtd
+msgid "Go to destination"
+msgstr "Đi tới điểm đến"
+
+#: pseudocodediagram-rap
+msgid "Remove all points"
+msgstr "Xóa tất cả các điểm"
+
+#: pseudocodediagram-ebh
+msgid "Edit block header"
+msgstr "Sửa tiêu đề khối"
+
+#: pseudocodediagram-ebc
+msgid "Edit block color"
+msgstr "Sửa màu khối"
+
+#: pseudocodediagram-ls
+msgid "List sources"
+msgstr "Danh sách nguồn"
+
+#: pseudocodediagram-ld
+msgid "List destinations"
+msgstr "Danh sách điểm đến"
+
+#: pseudocodediagram-eac
+msgid "Edit annotation color"
+msgstr "Sửa màu chú thích"
+
+#: pseudocodediagram-da
+msgid "Delete annotation"
+msgstr "Xóa chú thích"
+
+#: pseudocodediagram-ca
+msgid "Create annotation"
+msgstr "Tạo chú thích"
+
+#: pseudocodediagram-mdi
+msgid "[Diagram info]"
+msgstr "[Thông tin sơ đồ]"
+
+#: pseudocodediagram-fstart
+msgid " Function start: 0x%X"
+msgstr " Hàm bắt đầu: 0x%X"
+
+#: pseudocodediagram-fstop
+msgid " Function stop: 0x%X"
+msgstr " Hàm dừng: 0x%X"
+
+#: pseudocodediagram-dbc
+msgid " Diagram blocks count: %d"
+msgstr " Số khối sơ đồ: %d"
+
+#: pseudocodediagram-dlc
+msgid " Diagram links count: %d"
+msgstr " Số liên kết sơ đồ: %d"
+
+#: pseudocodediagram-diagram
+msgid "Diagram"
+msgstr "Sơ đồ"
+
+#: pseudocodediagram-sd
+msgid "Spawn diagram"
+msgstr "Sinh sơ đồ"
