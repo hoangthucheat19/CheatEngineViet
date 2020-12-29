@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>32</ID>
+      <Description>"Team Infinite Health"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(trumau,Darkest.exe,F3 0F 11 86 AC 0C 00 00 85)
+trumau-3:
+  db 58
+registersymbol(trumau)
+
+[DISABLE]
+trumau-3:
+  db 5C
+unregistersymbol(trumau)
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"Team No Stress"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(qxitret,Darkest.exe,F3 0F 11 8E E4 0D 00 00 38)
+qxitret+3:
+  db A6
+registersymbol(qxitret)
+
+[DISABLE]
+qxitret+3:
+  db 8E
+unregistersymbol(qxitret)
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>13</ID>
+      <Description>" One Hit Kill Monsters"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(qmaudich,Darkest.exe,F3 0F 11 83 AC 0C 00 00 85)
+qmaudich+3:
+  db 9B
+registersymbol(qmaudich)
+
+[DISABLE]
+qmaudich+3:
+  db 83
+unregistersymbol(qmaudich)
+
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"Activate Money/Upgrade"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscanmodule(qtien,Darkest.exe,8B 34 C8 89 B4 24 F8 04 00 00)
+alloc(newmem,$1000)
+globalalloc(tien,4)
+label(code)
+label(return)
+
+newmem:
+cmp byte ptr [eax+4],'gold'
+jne code
+mov [tien],eax
+code:
+  mov esi,[eax+ecx*8]
+  mov [esp+000004F8],esi
+  jmp return
+
+qtien:
+  jmp newmem
+  nop 5
+return:
+registersymbol(qtien)
+
+[DISABLE]
+qtien:
+  db 8B 34 C8 89 B4 24 F8 04 00 00
+unregistersymbol(qtien)
+dealloc(newmem tien)
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"Coins"</Description>
+          <LastState Value="1058534" RealAddress="142B9378"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>tien</Address>
+          <Offsets>
+            <Offset>0</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26</ID>
+          <Description>"Busts"</Description>
+          <LastState Value="69" RealAddress="142B93C0"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>tien</Address>
+          <Offsets>
+            <Offset>48</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"Portraits"</Description>
+          <LastState Value="107" RealAddress="142B9408"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>tien</Address>
+          <Offsets>
+            <Offset>90</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"Deeds"</Description>
+          <LastState Value="116" RealAddress="142B9450"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>tien</Address>
+          <Offsets>
+            <Offset>d8</Offset>
+          </Offsets>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"Crests"</Description>
+          <LastState Value="100" RealAddress="142B9498"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>tien</Address>
+          <Offsets>
+            <Offset>120</Offset>
+          </Offsets>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>42</ID>
+      <Description>"Max Lv Team"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+
+aobscanmodule(qxp,Darkest.exe,8B 8B 0C 0E 00 00 8B 80)
+alloc(newmem,$1000)
+label(code)
+label(return)
+
+newmem:
+mov [ebx+E0C],64
+code:
+  mov ecx,[ebx+00000E0C]
+  jmp return
+
+qxp:
+  jmp newmem
+  nop
+return:
+registersymbol(qxp)
+
+[DISABLE]
+
+qxp:
+  db 8B 8B 0C 0E 00 00
+unregistersymbol(qxp)
+dealloc(newmem xp)
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols>
+    <SymbolEntry>
+      <Name>mau</Name>
+      <Address>05F40000</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>tien</Name>
+      <Address>04500000</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>nang</Name>
+      <Address>04450020</Address>
+    </SymbolEntry>
+    <SymbolEntry>
+      <Name>xp</Name>
+      <Address>04500010</Address>
+    </SymbolEntry>
+  </UserdefinedSymbols>
+  <Structures StructVersion="2">
+    <Structure Name="cấu trúc không tên" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000000" DisplayMethod="Hex"/>
+        <Element Offset="4" Vartype="String" Bytesize="5" OffsetHex="00000004" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="9" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000009" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="12" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="0000000C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="28" Vartype="Pointer" Bytesize="4" OffsetHex="0000001C" Description="Con trỏ tới bản sao của MonsterClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" DisplayMethod="Hex"/>
+        <Element Offset="36" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000024" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000030" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="68" Vartype="Pointer" Bytesize="4" OffsetHex="00000044" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="76" Vartype="String" Bytesize="5" OffsetHex="0000004C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="81" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000051" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000054" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="100" Vartype="Pointer" Bytesize="4" OffsetHex="00000064" Description="Con trỏ tới bản sao của MonsterClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="104" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000068" DisplayMethod="Hex"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="0000006C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="120" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000078" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="140" Vartype="Pointer" Bytesize="4" OffsetHex="0000008C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="144" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000090" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="148" Vartype="String" Bytesize="9" OffsetHex="00000094" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="157" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="0000009D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="160" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="000000A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="Con trỏ tới bản sao của MonsterClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="176" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B0" DisplayMethod="Hex"/>
+        <Element Offset="180" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="000000B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="000000C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="216" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="220" Vartype="String" Bytesize="5" OffsetHex="000000DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="225" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="000000E1" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" RLECount="14" OffsetHex="000000E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="284" Vartype="Pointer" Bytesize="4" OffsetHex="0000011C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="288" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000120" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="292" Vartype="String" Bytesize="6" OffsetHex="00000124" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="298" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="0000012A" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="300" Vartype="4 Bytes" Bytesize="4" RLECount="14" OffsetHex="0000012C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="356" Vartype="Pointer" Bytesize="4" OffsetHex="00000164" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="360" Vartype="String" Bytesize="36" OffsetHex="00000168" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="396" Vartype="Byte" Bytesize="1" OffsetHex="0000018C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="397" Vartype="String" Bytesize="35" OffsetHex="0000018D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="432" Vartype="Pointer" Bytesize="4" OffsetHex="000001B0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="436" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001B4" DisplayMethod="Hex"/>
+        <Element Offset="440" Vartype="Pointer" Bytesize="4" OffsetHex="000001B8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="444" Vartype="String" Bytesize="26" OffsetHex="000001BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="470" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000001D6" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="472" Vartype="Pointer" Bytesize="4" OffsetHex="000001D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="476" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000001DC" DisplayMethod="Hex"/>
+        <Element Offset="484" Vartype="Pointer" Bytesize="4" OffsetHex="000001E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="488" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001E8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="492" Vartype="Pointer" Bytesize="4" OffsetHex="000001EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="496" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001F0" DisplayMethod="Hex"/>
+        <Element Offset="500" Vartype="Byte" Bytesize="1" OffsetHex="000001F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="501" Vartype="String" Bytesize="5" OffsetHex="000001F5" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="506" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000001FA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="508" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="512" Vartype="Pointer" Bytesize="4" OffsetHex="00000200" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="516" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000204" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="520" Vartype="Pointer" Bytesize="4" OffsetHex="00000208" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="524" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000020C" DisplayMethod="Hex"/>
+        <Element Offset="532" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000214" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="536" Vartype="Pointer" Bytesize="4" OffsetHex="00000218" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="540" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000021C" DisplayMethod="Hex"/>
+        <Element Offset="544" Vartype="Pointer" Bytesize="4" OffsetHex="00000220" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="548" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000224" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="552" Vartype="Pointer" Bytesize="4" OffsetHex="00000228" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="556" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000022C" DisplayMethod="Hex"/>
+        <Element Offset="564" Vartype="Pointer" Bytesize="4" OffsetHex="00000234" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="568" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000238" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="572" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000023C" DisplayMethod="Hex"/>
+        <Element Offset="576" Vartype="Pointer" Bytesize="4" OffsetHex="00000240" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="580" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000244" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="584" Vartype="Pointer" Bytesize="4" OffsetHex="00000248" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="588" Vartype="Pointer" Bytesize="4" OffsetHex="0000024C" Description="Con trỏ tới bản sao của DistrictBuiltAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="592" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000250" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="600" Vartype="Pointer" Bytesize="4" OffsetHex="00000258" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_31083649257f8bbef6ec6d6ac35eb0b5&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt; &gt;,enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="604" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000025C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="608" Vartype="Byte" Bytesize="1" OffsetHex="00000260" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="609" Vartype="String" Bytesize="7" OffsetHex="00000261" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="616" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000268" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="620" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="0000026C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="628" Vartype="String" Bytesize="20" OffsetHex="00000274" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="648" Vartype="String" Bytesize="14" OffsetHex="00000288" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="662" Vartype="String" Bytesize="9" OffsetHex="00000296" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="671" Vartype="Byte" Bytesize="1" OffsetHex="0000029F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="672" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="000002A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="684" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000002AC" DisplayMethod="Hex"/>
+        <Element Offset="692" Vartype="Pointer" Bytesize="4" OffsetHex="000002B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="696" Vartype="Pointer" Bytesize="4" OffsetHex="000002B8" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="700" Vartype="Pointer" Bytesize="4" OffsetHex="000002BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="704" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002C0" DisplayMethod="Hex"/>
+        <Element Offset="708" Vartype="Pointer" Bytesize="4" OffsetHex="000002C4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="712" Vartype="Float" Bytesize="4" OffsetHex="000002C8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="716" Vartype="Pointer" Bytesize="4" OffsetHex="000002CC" Description="Con trỏ tới bản sao của EventListener&lt;RaidFinishResultsEvent&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="720" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="000002D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="728" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002D8" DisplayMethod="Hex"/>
+        <Element Offset="732" Vartype="Pointer" Bytesize="4" RLECount="8" OffsetHex="000002DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="764" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="768" Vartype="Pointer" Bytesize="4" OffsetHex="00000300" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="772" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000304" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="776" Vartype="Pointer" Bytesize="4" OffsetHex="00000308" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="780" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="0000030C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="792" Vartype="Pointer" Bytesize="4" OffsetHex="00000318" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="796" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000031C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="804" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000324" DisplayMethod="Hex"/>
+        <Element Offset="808" Vartype="Pointer" Bytesize="4" OffsetHex="00000328" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="812" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000032C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="820" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000334" DisplayMethod="Hex"/>
+        <Element Offset="824" Vartype="Pointer" Bytesize="4" OffsetHex="00000338" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="828" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000033C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="836" Vartype="Pointer" Bytesize="4" OffsetHex="00000344" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="840" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000348" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="872" Vartype="Pointer" Bytesize="4" OffsetHex="00000368" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="876" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000036C" DisplayMethod="Hex"/>
+        <Element Offset="880" Vartype="Pointer" Bytesize="4" OffsetHex="00000370" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="884" Vartype="String" Bytesize="19" OffsetHex="00000374" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="903" Vartype="String" Bytesize="7" OffsetHex="00000387" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="910" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="0000038E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="912" Vartype="Pointer" Bytesize="4" OffsetHex="00000390" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="916" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000394" DisplayMethod="Hex"/>
+        <Element Offset="924" Vartype="Pointer" Bytesize="4" OffsetHex="0000039C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="928" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="932" Vartype="Pointer" Bytesize="4" OffsetHex="000003A4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="936" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003A8" DisplayMethod="Hex"/>
+        <Element Offset="940" Vartype="Byte" Bytesize="1" OffsetHex="000003AC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="941" Vartype="String" Bytesize="5" OffsetHex="000003AD" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="946" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000003B2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="948" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="952" Vartype="Pointer" Bytesize="4" OffsetHex="000003B8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="956" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="960" Vartype="Pointer" Bytesize="4" OffsetHex="000003C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="964" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003C4" DisplayMethod="Hex"/>
+        <Element Offset="972" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003CC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="976" Vartype="Pointer" Bytesize="4" OffsetHex="000003D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="980" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003D4" DisplayMethod="Hex"/>
+        <Element Offset="984" Vartype="Pointer" Bytesize="4" OffsetHex="000003D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="988" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="992" Vartype="Pointer" Bytesize="4" OffsetHex="000003E0" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="996" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003E4" DisplayMethod="Hex"/>
+        <Element Offset="1004" Vartype="Pointer" Bytesize="4" OffsetHex="000003EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1008" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1012" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003F4" DisplayMethod="Hex"/>
+        <Element Offset="1016" Vartype="Pointer" Bytesize="4" OffsetHex="000003F8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1020" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1024" Vartype="Pointer" Bytesize="4" OffsetHex="00000400" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1028" Vartype="Pointer" Bytesize="4" OffsetHex="00000404" Description="Con trỏ tới bản sao của DistrictBuiltAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1032" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000408" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1040" Vartype="Pointer" Bytesize="4" OffsetHex="00000410" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_31083649257f8bbef6ec6d6ac35eb0b5&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt; &gt;,enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1044" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000414" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1048" Vartype="String" Bytesize="14" OffsetHex="00000418" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1062" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000426" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1064" Vartype="Pointer" Bytesize="4" OffsetHex="00000428" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1068" Vartype="String" Bytesize="20" OffsetHex="0000042C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1088" Vartype="String" Bytesize="14" OffsetHex="00000440" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1102" Vartype="String" Bytesize="9" OffsetHex="0000044E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1111" Vartype="Byte" Bytesize="1" OffsetHex="00000457" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1112" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000458" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1124" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000464" DisplayMethod="Hex"/>
+        <Element Offset="1132" Vartype="Pointer" Bytesize="4" OffsetHex="0000046C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1136" Vartype="Pointer" Bytesize="4" OffsetHex="00000470" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1140" Vartype="Pointer" Bytesize="4" OffsetHex="00000474" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1144" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000478" DisplayMethod="Hex"/>
+        <Element Offset="1148" Vartype="Pointer" Bytesize="4" OffsetHex="0000047C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1152" Vartype="Float" Bytesize="4" OffsetHex="00000480" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1156" Vartype="Pointer" Bytesize="4" OffsetHex="00000484" Description="Con trỏ tới bản sao của EventListener&lt;RaidFinishResultsEvent&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1160" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000488" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1168" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000490" DisplayMethod="Hex"/>
+        <Element Offset="1172" Vartype="Pointer" Bytesize="4" RLECount="8" OffsetHex="00000494" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1204" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1208" Vartype="Pointer" Bytesize="4" OffsetHex="000004B8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1212" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1216" Vartype="Pointer" Bytesize="4" OffsetHex="000004C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1220" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="000004C4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1232" Vartype="Pointer" Bytesize="4" OffsetHex="000004D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1236" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004DC" DisplayMethod="Hex"/>
+        <Element Offset="1248" Vartype="Pointer" Bytesize="4" OffsetHex="000004E0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1252" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1260" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004EC" DisplayMethod="Hex"/>
+        <Element Offset="1264" Vartype="Pointer" Bytesize="4" OffsetHex="000004F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1268" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1276" Vartype="Pointer" Bytesize="4" OffsetHex="000004FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1280" Vartype="4 Bytes" Bytesize="4" RLECount="6" OffsetHex="00000500" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1304" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000518" DisplayMethod="Hex"/>
+        <Element Offset="1308" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000051C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1312" Vartype="Pointer" Bytesize="4" OffsetHex="00000520" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1316" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000524" DisplayMethod="Hex"/>
+        <Element Offset="1320" Vartype="4 Bytes" Bytesize="4" RLECount="107" OffsetHex="00000528" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1748" Vartype="String" Bytesize="4" OffsetHex="000006D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1752" Vartype="Pointer" Bytesize="4" OffsetHex="000006D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1756" Vartype="Double" Bytesize="8" RLECount="2" OffsetHex="000006DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1772" Vartype="String" Bytesize="4" OffsetHex="000006EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1776" Vartype="Pointer" Bytesize="4" OffsetHex="000006F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1780" Vartype="Float" Bytesize="4" RLECount="8" OffsetHex="000006F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1812" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="00000714" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1816" Vartype="Float" Bytesize="4" OffsetHex="00000718" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1820" Vartype="String" Bytesize="4" OffsetHex="0000071C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1824" Vartype="Double" Bytesize="8" OffsetHex="00000720" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1832" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="00000728" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1836" Vartype="Float" Bytesize="4" RLECount="7" OffsetHex="0000072C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1864" Vartype="Double" Bytesize="8" RLECount="4" OffsetHex="00000748" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1896" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000768" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1899" Vartype="2 Bytes" Bytesize="2" OffsetHex="0000076B" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1901" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="0000076D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1904" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000770" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1912" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000778" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1916" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="0000077C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1920" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000780" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1924" Vartype="Pointer" Bytesize="4" OffsetHex="00000784" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1928" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000788" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1932" Vartype="Pointer" Bytesize="4" OffsetHex="0000078C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1936" Vartype="Float" Bytesize="4" RLECount="2" OffsetHex="00000790" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1944" Vartype="Pointer" Bytesize="4" OffsetHex="00000798" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1948" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000079C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1952" Vartype="Pointer" Bytesize="4" OffsetHex="000007A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1956" Vartype="Double" Bytesize="8" RLECount="3" OffsetHex="000007A4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1980" Vartype="Byte" Bytesize="1" RLECount="9" OffsetHex="000007BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1989" Vartype="String" Bytesize="4" OffsetHex="000007C5" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1993" Vartype="Byte" Bytesize="1" OffsetHex="000007C9" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1994" Vartype="String" Bytesize="6" OffsetHex="000007CA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2000" Vartype="Pointer" Bytesize="4" OffsetHex="000007D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2004" Vartype="Double" Bytesize="8" RLECount="23" OffsetHex="000007D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2188" Vartype="Pointer" Bytesize="4" OffsetHex="0000088C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2192" Vartype="4 Bytes" Bytesize="4" RLECount="60" OffsetHex="00000890" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2432" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000980" DisplayMethod="Hex"/>
+        <Element Offset="2436" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000984" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2444" Vartype="String" Bytesize="9" OffsetHex="0000098C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2453" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000995" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2456" Vartype="4 Bytes" Bytesize="4" RLECount="12" OffsetHex="00000998" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2504" Vartype="Pointer" Bytesize="4" OffsetHex="000009C8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2508" Vartype="4 Bytes" Bytesize="4" OffsetHex="000009CC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2512" Vartype="4 Bytes" Bytesize="4" OffsetHex="000009D0" DisplayMethod="Hex"/>
+        <Element Offset="2516" Vartype="String" Bytesize="7" OffsetHex="000009D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2523" Vartype="Byte" Bytesize="1" OffsetHex="000009DB" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2524" Vartype="4 Bytes" Bytesize="4" RLECount="17" OffsetHex="000009DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2592" Vartype="String" Bytesize="13" OffsetHex="00000A20" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2605" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000A2D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2608" Vartype="4 Bytes" Bytesize="4" RLECount="28" OffsetHex="00000A30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2720" Vartype="String" Bytesize="16" OffsetHex="00000AA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2736" Vartype="4 Bytes" Bytesize="4" RLECount="38" OffsetHex="00000AB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2888" Vartype="Float" Bytesize="4" OffsetHex="00000B48" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2892" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B4C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2900" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B54" DisplayMethod="Hex"/>
+        <Element Offset="2904" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2912" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B60" DisplayMethod="Hex"/>
+        <Element Offset="2916" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B64" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2920" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B68" DisplayMethod="Hex"/>
+        <Element Offset="2924" Vartype="Pointer" Bytesize="4" OffsetHex="00000B6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2928" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B70" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2936" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B78" DisplayMethod="Hex"/>
+        <Element Offset="2940" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B7C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2948" Vartype="Pointer" Bytesize="4" OffsetHex="00000B84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2952" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B88" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2960" Vartype="Pointer" Bytesize="4" OffsetHex="00000B90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2964" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B94" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2968" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B98" DisplayMethod="Hex"/>
+        <Element Offset="2976" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2980" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BA4" DisplayMethod="Hex"/>
+        <Element Offset="2984" Vartype="Byte" Bytesize="1" OffsetHex="00000BA8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2985" Vartype="String" Bytesize="5" OffsetHex="00000BA9" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2990" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000BAE" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2992" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BB0" DisplayMethod="Hex"/>
+        <Element Offset="2996" Vartype="Pointer" Bytesize="4" OffsetHex="00000BB4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3000" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BB8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3004" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BBC" DisplayMethod="Hex"/>
+        <Element Offset="3012" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3016" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BC8" DisplayMethod="Hex"/>
+        <Element Offset="3024" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3028" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BD4" DisplayMethod="Hex"/>
+        <Element Offset="3036" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BDC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3040" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BE0" DisplayMethod="Hex"/>
+        <Element Offset="3048" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BE8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3052" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BEC" DisplayMethod="Hex"/>
+        <Element Offset="3060" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BF4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3064" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BF8" DisplayMethod="Hex"/>
+        <Element Offset="3072" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C00" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3076" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C04" DisplayMethod="Hex"/>
+        <Element Offset="3084" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3088" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C10" DisplayMethod="Hex"/>
+        <Element Offset="3096" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C18" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3100" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C1C" DisplayMethod="Hex"/>
+        <Element Offset="3108" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C28" DisplayMethod="Hex"/>
+        <Element Offset="3116" Vartype="Float" Bytesize="4" OffsetHex="00000C2C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3120" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3124" Vartype="Double" Bytesize="8" OffsetHex="00000C34" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3132" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C3C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C40" DisplayMethod="Hex"/>
+        <Element Offset="3140" Vartype="Float" Bytesize="4" OffsetHex="00000C44" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3144" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C48" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3148" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C4C" DisplayMethod="Hex"/>
+        <Element Offset="3156" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3160" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C58" DisplayMethod="Hex"/>
+        <Element Offset="3164" Vartype="Pointer" Bytesize="4" OffsetHex="00000C5C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3168" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3172" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C64" DisplayMethod="Hex"/>
+        <Element Offset="3180" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3184" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C70" DisplayMethod="Hex"/>
+        <Element Offset="3192" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C78" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3200" Vartype="String" Bytesize="5" OffsetHex="00000C80" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3205" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000C85" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3208" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C88" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3212" Vartype="String" Bytesize="10" OffsetHex="00000C8C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3222" Vartype="String" Bytesize="8" OffsetHex="00000C96" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3230" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000C9E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3232" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000CA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3236" Vartype="String" Bytesize="14" OffsetHex="00000CA4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3250" Vartype="String" Bytesize="12" OffsetHex="00000CB2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3262" Vartype="String" Bytesize="20" OffsetHex="00000CBE" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3282" Vartype="String" Bytesize="14" OffsetHex="00000CD2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3296" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000CE0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3312" Vartype="Pointer" Bytesize="4" OffsetHex="00000CF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3316" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000CF4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3328" Vartype="Double" Bytesize="8" OffsetHex="00000D00" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3336" Vartype="Pointer" Bytesize="4" OffsetHex="00000D08" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3340" Vartype="4 Bytes" Bytesize="4" RLECount="6" OffsetHex="00000D0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3364" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000D24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3376" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3380" Vartype="Pointer" Bytesize="4" RLECount="4" OffsetHex="00000D34" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3396" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D44" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3400" Vartype="Pointer" Bytesize="4" OffsetHex="00000D48" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3404" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D4C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3408" Vartype="Pointer" Bytesize="4" OffsetHex="00000D50" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3412" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3416" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000D58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3424" Vartype="Double" Bytesize="8" OffsetHex="00000D60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3432" Vartype="Pointer" Bytesize="4" OffsetHex="00000D68" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3436" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000D6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3448" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D78" DisplayMethod="Hex"/>
+        <Element Offset="3452" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000D7C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3472" Vartype="String" Bytesize="7" OffsetHex="00000D90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3479" Vartype="String" Bytesize="16" OffsetHex="00000D97" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3495" Vartype="String" Bytesize="11" OffsetHex="00000DA7" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3506" Vartype="String" Bytesize="17" OffsetHex="00000DB2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3523" Vartype="String" Bytesize="7" OffsetHex="00000DC3" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3530" Vartype="String" Bytesize="5" OffsetHex="00000DCA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3535" Vartype="Byte" Bytesize="1" OffsetHex="00000DCF" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3536" Vartype="Pointer" Bytesize="4" OffsetHex="00000DD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3540" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000DD4" DisplayMethod="Hex"/>
+        <Element Offset="3544" Vartype="String" Bytesize="17" OffsetHex="00000DD8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3561" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000DE9" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3564" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000DEC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3568" Vartype="String" Bytesize="18" OffsetHex="00000DF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3586" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000E02" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3588" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E04" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3592" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000E08" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3600" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E10" DisplayMethod="Hex"/>
+        <Element Offset="3604" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000E14" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3620" Vartype="Pointer" Bytesize="4" OffsetHex="00000E24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3624" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E28" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3628" Vartype="Pointer" Bytesize="4" OffsetHex="00000E2C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3632" Vartype="String" Bytesize="9" OffsetHex="00000E30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3641" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000E39" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3644" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E3C" DisplayMethod="Hex"/>
+        <Element Offset="3648" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000E40" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3656" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E48" DisplayMethod="Hex"/>
+        <Element Offset="3660" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E4C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3664" Vartype="Pointer" Bytesize="4" OffsetHex="00000E50" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3668" Vartype="String" Bytesize="11" OffsetHex="00000E54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3679" Vartype="Byte" Bytesize="1" OffsetHex="00000E5F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3680" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000E60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3688" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000E68" DisplayMethod="Hex"/>
+        <Element Offset="3696" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E70" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3700" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E74" DisplayMethod="Hex"/>
+        <Element Offset="3704" Vartype="String" Bytesize="7" OffsetHex="00000E78" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3711" Vartype="Byte" Bytesize="1" OffsetHex="00000E7F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3712" Vartype="Pointer" Bytesize="4" OffsetHex="00000E80" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3716" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000E84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3728" Vartype="Double" Bytesize="8" OffsetHex="00000E90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3736" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E98" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3740" Vartype="String" Bytesize="9" OffsetHex="00000E9C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3749" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000EA5" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3752" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EA8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3756" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EAC" DisplayMethod="Hex"/>
+        <Element Offset="3760" Vartype="Pointer" Bytesize="4" OffsetHex="00000EB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3764" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000EB4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3780" Vartype="String" Bytesize="13" OffsetHex="00000EC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3793" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000ED1" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3796" Vartype="Pointer" Bytesize="4" OffsetHex="00000ED4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3800" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000ED8" DisplayMethod="Hex"/>
+        <Element Offset="3804" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000EDC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3812" Vartype="String" Bytesize="11" OffsetHex="00000EE4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3823" Vartype="Byte" Bytesize="1" OffsetHex="00000EEF" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3824" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000EF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3832" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EF8" DisplayMethod="Hex"/>
+        <Element Offset="3836" Vartype="Pointer" Bytesize="4" OffsetHex="00000EFC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3840" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F00" DisplayMethod="Hex"/>
+        <Element Offset="3844" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F04" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3848" Vartype="Pointer" Bytesize="4" OffsetHex="00000F08" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3852" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F0C" DisplayMethod="Hex"/>
+        <Element Offset="3856" Vartype="Pointer" Bytesize="4" OffsetHex="00000F10" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3860" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000F14" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3872" Vartype="Double" Bytesize="8" OffsetHex="00000F20" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3880" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F28" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3884" Vartype="String" Bytesize="9" OffsetHex="00000F2C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3893" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000F35" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3896" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F38" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3900" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000F3C" DisplayMethod="Hex"/>
+        <Element Offset="3908" Vartype="String" Bytesize="16" OffsetHex="00000F44" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3924" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F54" DisplayMethod="Hex"/>
+        <Element Offset="3928" Vartype="Pointer" Bytesize="4" OffsetHex="00000F58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3932" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F5C" DisplayMethod="Hex"/>
+        <Element Offset="3936" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000F60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3944" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F68" DisplayMethod="Hex"/>
+        <Element Offset="3948" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000F6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3956" Vartype="String" Bytesize="11" OffsetHex="00000F74" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3967" Vartype="Byte" Bytesize="1" OffsetHex="00000F7F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3968" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F80" DisplayMethod="Hex"/>
+        <Element Offset="3972" Vartype="Pointer" Bytesize="4" OffsetHex="00000F84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3976" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F88" DisplayMethod="Hex"/>
+        <Element Offset="3980" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000F8C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3988" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F94" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3992" Vartype="Pointer" Bytesize="4" OffsetHex="00000F98" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3996" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F9C" DisplayMethod="Hex"/>
+        <Element Offset="4000" Vartype="Pointer" Bytesize="4" OffsetHex="00000FA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4004" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000FA4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4016" Vartype="Double" Bytesize="8" OffsetHex="00000FB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4024" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FB8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4028" Vartype="String" Bytesize="8" OffsetHex="00000FBC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4036" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000FC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4044" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FCC" DisplayMethod="Hex"/>
+        <Element Offset="4048" Vartype="Pointer" Bytesize="4" OffsetHex="00000FD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4052" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FD4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4056" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FD8" DisplayMethod="Hex"/>
+        <Element Offset="4060" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000FDC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4068" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FE4" DisplayMethod="Hex"/>
+        <Element Offset="4072" Vartype="Pointer" Bytesize="4" OffsetHex="00000FE8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4076" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FEC" DisplayMethod="Hex"/>
+        <Element Offset="4080" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000FF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4088" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FF8" DisplayMethod="Hex"/>
+        <Element Offset="4092" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FFC" DisplayMethod="Số nguyên chưa ký"/>
+      </Elements>
+    </Structure>
+    <Structure Name="cấu trúc không tên" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000000" DisplayMethod="Số nguyên đã ký"/>
+        <Element Offset="4" Vartype="String" Bytesize="5" OffsetHex="00000004" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="9" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000009" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="12" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="0000000C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="28" Vartype="Pointer" Bytesize="4" OffsetHex="0000001C" Description="Con trỏ tới bản sao của MonsterClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000020" DisplayMethod="Hex"/>
+        <Element Offset="36" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000024" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000030" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="68" Vartype="Pointer" Bytesize="4" OffsetHex="00000044" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="72" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000048" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="76" Vartype="String" Bytesize="5" OffsetHex="0000004C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="81" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000051" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000054" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="100" Vartype="Pointer" Bytesize="4" OffsetHex="00000064" Description="Con trỏ tới bản sao của MonsterClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="104" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000068" DisplayMethod="Hex"/>
+        <Element Offset="108" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="0000006C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="120" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000078" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="140" Vartype="Pointer" Bytesize="4" OffsetHex="0000008C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="144" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000090" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="148" Vartype="String" Bytesize="9" OffsetHex="00000094" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="157" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="0000009D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="160" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="000000A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="172" Vartype="Pointer" Bytesize="4" OffsetHex="000000AC" Description="Con trỏ tới bản sao của MonsterClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="176" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000B0" DisplayMethod="Hex"/>
+        <Element Offset="180" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="000000B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="192" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="000000C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="212" Vartype="Pointer" Bytesize="4" OffsetHex="000000D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="216" Vartype="4 Bytes" Bytesize="4" OffsetHex="000000D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="220" Vartype="String" Bytesize="5" OffsetHex="000000DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="225" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="000000E1" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="228" Vartype="4 Bytes" Bytesize="4" RLECount="14" OffsetHex="000000E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="284" Vartype="Pointer" Bytesize="4" OffsetHex="0000011C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="288" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000120" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="292" Vartype="String" Bytesize="6" OffsetHex="00000124" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="298" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="0000012A" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="300" Vartype="4 Bytes" Bytesize="4" RLECount="14" OffsetHex="0000012C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="356" Vartype="Pointer" Bytesize="4" OffsetHex="00000164" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="360" Vartype="String" Bytesize="36" OffsetHex="00000168" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="396" Vartype="Byte" Bytesize="1" OffsetHex="0000018C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="397" Vartype="String" Bytesize="35" OffsetHex="0000018D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="432" Vartype="Pointer" Bytesize="4" OffsetHex="000001B0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="436" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001B4" DisplayMethod="Hex"/>
+        <Element Offset="440" Vartype="Pointer" Bytesize="4" OffsetHex="000001B8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="444" Vartype="String" Bytesize="26" OffsetHex="000001BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="470" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000001D6" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="472" Vartype="Pointer" Bytesize="4" OffsetHex="000001D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="476" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000001DC" DisplayMethod="Hex"/>
+        <Element Offset="484" Vartype="Pointer" Bytesize="4" OffsetHex="000001E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="488" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001E8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="492" Vartype="Pointer" Bytesize="4" OffsetHex="000001EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="496" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001F0" DisplayMethod="Hex"/>
+        <Element Offset="500" Vartype="Byte" Bytesize="1" OffsetHex="000001F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="501" Vartype="String" Bytesize="5" OffsetHex="000001F5" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="506" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000001FA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="508" Vartype="4 Bytes" Bytesize="4" OffsetHex="000001FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="512" Vartype="Pointer" Bytesize="4" OffsetHex="00000200" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="516" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000204" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="520" Vartype="Pointer" Bytesize="4" OffsetHex="00000208" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="524" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000020C" DisplayMethod="Hex"/>
+        <Element Offset="532" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000214" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="536" Vartype="Pointer" Bytesize="4" OffsetHex="00000218" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="540" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000021C" DisplayMethod="Hex"/>
+        <Element Offset="544" Vartype="Pointer" Bytesize="4" OffsetHex="00000220" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="548" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000224" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="552" Vartype="Pointer" Bytesize="4" OffsetHex="00000228" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="556" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000022C" DisplayMethod="Hex"/>
+        <Element Offset="564" Vartype="Pointer" Bytesize="4" OffsetHex="00000234" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="568" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000238" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="572" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000023C" DisplayMethod="Hex"/>
+        <Element Offset="576" Vartype="Pointer" Bytesize="4" OffsetHex="00000240" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="580" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000244" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="584" Vartype="Pointer" Bytesize="4" OffsetHex="00000248" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="588" Vartype="Pointer" Bytesize="4" OffsetHex="0000024C" Description="Con trỏ tới bản sao của DistrictBuiltAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="592" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000250" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="600" Vartype="Pointer" Bytesize="4" OffsetHex="00000258" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_31083649257f8bbef6ec6d6ac35eb0b5&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt; &gt;,enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="604" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000025C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="608" Vartype="Byte" Bytesize="1" OffsetHex="00000260" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="609" Vartype="String" Bytesize="7" OffsetHex="00000261" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="616" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000268" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="620" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="0000026C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="628" Vartype="String" Bytesize="20" OffsetHex="00000274" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="648" Vartype="String" Bytesize="14" OffsetHex="00000288" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="662" Vartype="String" Bytesize="9" OffsetHex="00000296" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="671" Vartype="Byte" Bytesize="1" OffsetHex="0000029F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="672" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="000002A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="684" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000002AC" DisplayMethod="Hex"/>
+        <Element Offset="692" Vartype="Pointer" Bytesize="4" OffsetHex="000002B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="696" Vartype="Pointer" Bytesize="4" OffsetHex="000002B8" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="700" Vartype="Pointer" Bytesize="4" OffsetHex="000002BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="704" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002C0" DisplayMethod="Hex"/>
+        <Element Offset="708" Vartype="Pointer" Bytesize="4" OffsetHex="000002C4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="712" Vartype="Float" Bytesize="4" OffsetHex="000002C8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="716" Vartype="Pointer" Bytesize="4" OffsetHex="000002CC" Description="Con trỏ tới bản sao của EventListener&lt;RaidFinishResultsEvent&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="720" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="000002D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="728" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002D8" DisplayMethod="Hex"/>
+        <Element Offset="732" Vartype="Pointer" Bytesize="4" RLECount="8" OffsetHex="000002DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="764" Vartype="4 Bytes" Bytesize="4" OffsetHex="000002FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="768" Vartype="Pointer" Bytesize="4" OffsetHex="00000300" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="772" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000304" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="776" Vartype="Pointer" Bytesize="4" OffsetHex="00000308" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="780" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="0000030C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="792" Vartype="Pointer" Bytesize="4" OffsetHex="00000318" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="796" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000031C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="804" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000324" DisplayMethod="Hex"/>
+        <Element Offset="808" Vartype="Pointer" Bytesize="4" OffsetHex="00000328" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="812" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000032C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="820" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000334" DisplayMethod="Hex"/>
+        <Element Offset="824" Vartype="Pointer" Bytesize="4" OffsetHex="00000338" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="828" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000033C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="836" Vartype="Pointer" Bytesize="4" OffsetHex="00000344" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="840" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000348" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="872" Vartype="Pointer" Bytesize="4" OffsetHex="00000368" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="876" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000036C" DisplayMethod="Hex"/>
+        <Element Offset="880" Vartype="Pointer" Bytesize="4" OffsetHex="00000370" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="884" Vartype="String" Bytesize="19" OffsetHex="00000374" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="903" Vartype="String" Bytesize="7" OffsetHex="00000387" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="910" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="0000038E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="912" Vartype="Pointer" Bytesize="4" OffsetHex="00000390" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="916" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000394" DisplayMethod="Hex"/>
+        <Element Offset="924" Vartype="Pointer" Bytesize="4" OffsetHex="0000039C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="928" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="932" Vartype="Pointer" Bytesize="4" OffsetHex="000003A4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="936" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003A8" DisplayMethod="Hex"/>
+        <Element Offset="940" Vartype="Byte" Bytesize="1" OffsetHex="000003AC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="941" Vartype="String" Bytesize="5" OffsetHex="000003AD" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="946" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000003B2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="948" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="952" Vartype="Pointer" Bytesize="4" OffsetHex="000003B8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="956" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="960" Vartype="Pointer" Bytesize="4" OffsetHex="000003C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="964" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003C4" DisplayMethod="Hex"/>
+        <Element Offset="972" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003CC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="976" Vartype="Pointer" Bytesize="4" OffsetHex="000003D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="980" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003D4" DisplayMethod="Hex"/>
+        <Element Offset="984" Vartype="Pointer" Bytesize="4" OffsetHex="000003D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="988" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="992" Vartype="Pointer" Bytesize="4" OffsetHex="000003E0" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="996" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003E4" DisplayMethod="Hex"/>
+        <Element Offset="1004" Vartype="Pointer" Bytesize="4" OffsetHex="000003EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1008" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1012" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003F4" DisplayMethod="Hex"/>
+        <Element Offset="1016" Vartype="Pointer" Bytesize="4" OffsetHex="000003F8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1020" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1024" Vartype="Pointer" Bytesize="4" OffsetHex="00000400" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1028" Vartype="Pointer" Bytesize="4" OffsetHex="00000404" Description="Con trỏ tới bản sao của DistrictBuiltAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1032" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000408" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1040" Vartype="Pointer" Bytesize="4" OffsetHex="00000410" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_31083649257f8bbef6ec6d6ac35eb0b5&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt; &gt;,enum ListenerResponse,DistrictBuildingBuiltEvent const *&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1044" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000414" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1048" Vartype="String" Bytesize="14" OffsetHex="00000418" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1062" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000426" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1064" Vartype="Pointer" Bytesize="4" OffsetHex="00000428" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1068" Vartype="String" Bytesize="20" OffsetHex="0000042C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1088" Vartype="String" Bytesize="14" OffsetHex="00000440" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1102" Vartype="String" Bytesize="9" OffsetHex="0000044E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1111" Vartype="Byte" Bytesize="1" OffsetHex="00000457" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1112" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000458" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1124" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000464" DisplayMethod="Hex"/>
+        <Element Offset="1132" Vartype="Pointer" Bytesize="4" OffsetHex="0000046C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1136" Vartype="Pointer" Bytesize="4" OffsetHex="00000470" Description="Con trỏ tới bản sao của EnemiesKilledAchievement" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1140" Vartype="Pointer" Bytesize="4" OffsetHex="00000474" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1144" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000478" DisplayMethod="Hex"/>
+        <Element Offset="1148" Vartype="Pointer" Bytesize="4" OffsetHex="0000047C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1152" Vartype="Float" Bytesize="4" OffsetHex="00000480" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1156" Vartype="Pointer" Bytesize="4" OffsetHex="00000484" Description="Con trỏ tới bản sao của EventListener&lt;RaidFinishResultsEvent&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1160" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000488" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1168" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000490" DisplayMethod="Hex"/>
+        <Element Offset="1172" Vartype="Pointer" Bytesize="4" RLECount="8" OffsetHex="00000494" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1204" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1208" Vartype="Pointer" Bytesize="4" OffsetHex="000004B8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1212" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1216" Vartype="Pointer" Bytesize="4" OffsetHex="000004C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1220" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="000004C4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1232" Vartype="Pointer" Bytesize="4" OffsetHex="000004D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1236" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1244" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004DC" DisplayMethod="Hex"/>
+        <Element Offset="1248" Vartype="Pointer" Bytesize="4" OffsetHex="000004E0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1252" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1260" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004EC" DisplayMethod="Hex"/>
+        <Element Offset="1264" Vartype="Pointer" Bytesize="4" OffsetHex="000004F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1268" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1276" Vartype="Pointer" Bytesize="4" OffsetHex="000004FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1280" Vartype="4 Bytes" Bytesize="4" RLECount="6" OffsetHex="00000500" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1304" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000518" DisplayMethod="Hex"/>
+        <Element Offset="1308" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000051C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1312" Vartype="Pointer" Bytesize="4" OffsetHex="00000520" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1316" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000524" DisplayMethod="Hex"/>
+        <Element Offset="1320" Vartype="4 Bytes" Bytesize="4" RLECount="107" OffsetHex="00000528" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1748" Vartype="String" Bytesize="4" OffsetHex="000006D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1752" Vartype="Pointer" Bytesize="4" OffsetHex="000006D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1756" Vartype="Double" Bytesize="8" RLECount="2" OffsetHex="000006DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1772" Vartype="String" Bytesize="4" OffsetHex="000006EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1776" Vartype="Pointer" Bytesize="4" OffsetHex="000006F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1780" Vartype="Float" Bytesize="4" RLECount="8" OffsetHex="000006F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1812" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="00000714" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1816" Vartype="Float" Bytesize="4" OffsetHex="00000718" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1820" Vartype="String" Bytesize="4" OffsetHex="0000071C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1824" Vartype="Double" Bytesize="8" OffsetHex="00000720" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1832" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="00000728" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1836" Vartype="Float" Bytesize="4" RLECount="7" OffsetHex="0000072C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1864" Vartype="Double" Bytesize="8" RLECount="4" OffsetHex="00000748" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1896" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000768" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1899" Vartype="2 Bytes" Bytesize="2" OffsetHex="0000076B" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1901" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="0000076D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1904" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000770" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1912" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000778" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1916" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="0000077C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1920" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000780" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1924" Vartype="Pointer" Bytesize="4" OffsetHex="00000784" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1928" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000788" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1932" Vartype="Pointer" Bytesize="4" OffsetHex="0000078C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1936" Vartype="Float" Bytesize="4" RLECount="2" OffsetHex="00000790" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1944" Vartype="Pointer" Bytesize="4" OffsetHex="00000798" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1948" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000079C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1952" Vartype="Pointer" Bytesize="4" OffsetHex="000007A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1956" Vartype="Double" Bytesize="8" RLECount="3" OffsetHex="000007A4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1980" Vartype="Byte" Bytesize="1" RLECount="9" OffsetHex="000007BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1989" Vartype="String" Bytesize="4" OffsetHex="000007C5" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1993" Vartype="Byte" Bytesize="1" OffsetHex="000007C9" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1994" Vartype="String" Bytesize="6" OffsetHex="000007CA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2000" Vartype="Pointer" Bytesize="4" OffsetHex="000007D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2004" Vartype="Double" Bytesize="8" RLECount="23" OffsetHex="000007D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2188" Vartype="Pointer" Bytesize="4" OffsetHex="0000088C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2192" Vartype="4 Bytes" Bytesize="4" RLECount="60" OffsetHex="00000890" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2432" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000980" DisplayMethod="Hex"/>
+        <Element Offset="2436" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000984" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2444" Vartype="String" Bytesize="9" OffsetHex="0000098C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2453" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000995" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2456" Vartype="4 Bytes" Bytesize="4" RLECount="12" OffsetHex="00000998" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2504" Vartype="Pointer" Bytesize="4" OffsetHex="000009C8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2508" Vartype="4 Bytes" Bytesize="4" OffsetHex="000009CC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2512" Vartype="4 Bytes" Bytesize="4" OffsetHex="000009D0" DisplayMethod="Hex"/>
+        <Element Offset="2516" Vartype="String" Bytesize="7" OffsetHex="000009D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2523" Vartype="Byte" Bytesize="1" OffsetHex="000009DB" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2524" Vartype="4 Bytes" Bytesize="4" RLECount="17" OffsetHex="000009DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2592" Vartype="String" Bytesize="13" OffsetHex="00000A20" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2605" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000A2D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2608" Vartype="4 Bytes" Bytesize="4" RLECount="28" OffsetHex="00000A30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2720" Vartype="String" Bytesize="16" OffsetHex="00000AA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2736" Vartype="4 Bytes" Bytesize="4" RLECount="38" OffsetHex="00000AB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2888" Vartype="Float" Bytesize="4" OffsetHex="00000B48" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2892" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B4C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2900" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B54" DisplayMethod="Hex"/>
+        <Element Offset="2904" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2912" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B60" DisplayMethod="Hex"/>
+        <Element Offset="2916" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B64" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2920" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B68" DisplayMethod="Hex"/>
+        <Element Offset="2924" Vartype="Pointer" Bytesize="4" OffsetHex="00000B6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2928" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B70" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2936" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B78" DisplayMethod="Hex"/>
+        <Element Offset="2940" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B7C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2948" Vartype="Pointer" Bytesize="4" OffsetHex="00000B84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2952" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B88" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2960" Vartype="Pointer" Bytesize="4" OffsetHex="00000B90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2964" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000B94" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2968" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000B98" DisplayMethod="Hex"/>
+        <Element Offset="2976" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2980" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BA4" DisplayMethod="Hex"/>
+        <Element Offset="2984" Vartype="Byte" Bytesize="1" OffsetHex="00000BA8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2985" Vartype="String" Bytesize="5" OffsetHex="00000BA9" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2990" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000BAE" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2992" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BB0" DisplayMethod="Hex"/>
+        <Element Offset="2996" Vartype="Pointer" Bytesize="4" OffsetHex="00000BB4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3000" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BB8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3004" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BBC" DisplayMethod="Hex"/>
+        <Element Offset="3012" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3016" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BC8" DisplayMethod="Hex"/>
+        <Element Offset="3024" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3028" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BD4" DisplayMethod="Hex"/>
+        <Element Offset="3036" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BDC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3040" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BE0" DisplayMethod="Hex"/>
+        <Element Offset="3048" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BE8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3052" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BEC" DisplayMethod="Hex"/>
+        <Element Offset="3060" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000BF4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3064" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000BF8" DisplayMethod="Hex"/>
+        <Element Offset="3072" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C00" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3076" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C04" DisplayMethod="Hex"/>
+        <Element Offset="3084" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3088" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C10" DisplayMethod="Hex"/>
+        <Element Offset="3096" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C18" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3100" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C1C" DisplayMethod="Hex"/>
+        <Element Offset="3108" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3112" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C28" DisplayMethod="Hex"/>
+        <Element Offset="3116" Vartype="Float" Bytesize="4" OffsetHex="00000C2C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3120" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3124" Vartype="Double" Bytesize="8" OffsetHex="00000C34" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3132" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C3C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3136" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C40" DisplayMethod="Hex"/>
+        <Element Offset="3140" Vartype="Float" Bytesize="4" OffsetHex="00000C44" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3144" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C48" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3148" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C4C" DisplayMethod="Hex"/>
+        <Element Offset="3156" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3160" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C58" DisplayMethod="Hex"/>
+        <Element Offset="3164" Vartype="Pointer" Bytesize="4" OffsetHex="00000C5C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3168" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3172" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C64" DisplayMethod="Hex"/>
+        <Element Offset="3180" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3184" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C70" DisplayMethod="Hex"/>
+        <Element Offset="3192" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000C78" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3200" Vartype="String" Bytesize="5" OffsetHex="00000C80" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3205" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000C85" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3208" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000C88" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3212" Vartype="String" Bytesize="10" OffsetHex="00000C8C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3222" Vartype="String" Bytesize="8" OffsetHex="00000C96" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3230" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000C9E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3232" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000CA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3236" Vartype="String" Bytesize="14" OffsetHex="00000CA4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3250" Vartype="String" Bytesize="12" OffsetHex="00000CB2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3262" Vartype="String" Bytesize="20" OffsetHex="00000CBE" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3282" Vartype="String" Bytesize="14" OffsetHex="00000CD2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3296" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000CE0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3312" Vartype="Pointer" Bytesize="4" OffsetHex="00000CF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3316" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000CF4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3328" Vartype="Double" Bytesize="8" OffsetHex="00000D00" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3336" Vartype="Pointer" Bytesize="4" OffsetHex="00000D08" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3340" Vartype="4 Bytes" Bytesize="4" RLECount="6" OffsetHex="00000D0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3364" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000D24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3376" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3380" Vartype="Pointer" Bytesize="4" RLECount="4" OffsetHex="00000D34" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3396" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D44" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3400" Vartype="Pointer" Bytesize="4" OffsetHex="00000D48" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3404" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D4C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3408" Vartype="Pointer" Bytesize="4" OffsetHex="00000D50" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3412" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3416" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000D58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3424" Vartype="Double" Bytesize="8" OffsetHex="00000D60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3432" Vartype="Pointer" Bytesize="4" OffsetHex="00000D68" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3436" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000D6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3448" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D78" DisplayMethod="Hex"/>
+        <Element Offset="3452" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000D7C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3472" Vartype="String" Bytesize="7" OffsetHex="00000D90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3479" Vartype="String" Bytesize="16" OffsetHex="00000D97" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3495" Vartype="String" Bytesize="11" OffsetHex="00000DA7" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3506" Vartype="String" Bytesize="17" OffsetHex="00000DB2" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3523" Vartype="String" Bytesize="7" OffsetHex="00000DC3" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3530" Vartype="String" Bytesize="5" OffsetHex="00000DCA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3535" Vartype="Byte" Bytesize="1" OffsetHex="00000DCF" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3536" Vartype="Pointer" Bytesize="4" OffsetHex="00000DD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3540" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000DD4" DisplayMethod="Hex"/>
+        <Element Offset="3544" Vartype="String" Bytesize="17" OffsetHex="00000DD8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3561" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000DE9" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3564" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000DEC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3568" Vartype="String" Bytesize="18" OffsetHex="00000DF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3586" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000E02" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3588" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E04" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3592" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000E08" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3600" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E10" DisplayMethod="Hex"/>
+        <Element Offset="3604" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000E14" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3620" Vartype="Pointer" Bytesize="4" OffsetHex="00000E24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3624" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E28" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3628" Vartype="Pointer" Bytesize="4" OffsetHex="00000E2C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3632" Vartype="String" Bytesize="9" OffsetHex="00000E30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3641" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000E39" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3644" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E3C" DisplayMethod="Hex"/>
+        <Element Offset="3648" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000E40" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3656" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E48" DisplayMethod="Hex"/>
+        <Element Offset="3660" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E4C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3664" Vartype="Pointer" Bytesize="4" OffsetHex="00000E50" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3668" Vartype="String" Bytesize="11" OffsetHex="00000E54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3679" Vartype="Byte" Bytesize="1" OffsetHex="00000E5F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3680" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000E60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3688" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000E68" DisplayMethod="Hex"/>
+        <Element Offset="3696" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E70" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3700" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E74" DisplayMethod="Hex"/>
+        <Element Offset="3704" Vartype="String" Bytesize="7" OffsetHex="00000E78" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3711" Vartype="Byte" Bytesize="1" OffsetHex="00000E7F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3712" Vartype="Pointer" Bytesize="4" OffsetHex="00000E80" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3716" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000E84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3728" Vartype="Double" Bytesize="8" OffsetHex="00000E90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3736" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000E98" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3740" Vartype="String" Bytesize="9" OffsetHex="00000E9C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3749" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000EA5" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3752" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EA8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3756" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EAC" DisplayMethod="Hex"/>
+        <Element Offset="3760" Vartype="Pointer" Bytesize="4" OffsetHex="00000EB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3764" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000EB4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3780" Vartype="String" Bytesize="13" OffsetHex="00000EC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3793" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000ED1" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3796" Vartype="Pointer" Bytesize="4" OffsetHex="00000ED4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3800" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000ED8" DisplayMethod="Hex"/>
+        <Element Offset="3804" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000EDC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3812" Vartype="String" Bytesize="11" OffsetHex="00000EE4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3823" Vartype="Byte" Bytesize="1" OffsetHex="00000EEF" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3824" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000EF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3832" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EF8" DisplayMethod="Hex"/>
+        <Element Offset="3836" Vartype="Pointer" Bytesize="4" OffsetHex="00000EFC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3840" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F00" DisplayMethod="Hex"/>
+        <Element Offset="3844" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F04" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3848" Vartype="Pointer" Bytesize="4" OffsetHex="00000F08" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3852" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F0C" DisplayMethod="Hex"/>
+        <Element Offset="3856" Vartype="Pointer" Bytesize="4" OffsetHex="00000F10" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3860" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000F14" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3872" Vartype="Double" Bytesize="8" OffsetHex="00000F20" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3880" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F28" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3884" Vartype="String" Bytesize="9" OffsetHex="00000F2C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3893" Vartype="Byte" Bytesize="1" RLECount="3" OffsetHex="00000F35" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3896" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F38" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3900" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000F3C" DisplayMethod="Hex"/>
+        <Element Offset="3908" Vartype="String" Bytesize="16" OffsetHex="00000F44" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3924" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F54" DisplayMethod="Hex"/>
+        <Element Offset="3928" Vartype="Pointer" Bytesize="4" OffsetHex="00000F58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3932" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F5C" DisplayMethod="Hex"/>
+        <Element Offset="3936" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000F60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3944" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F68" DisplayMethod="Hex"/>
+        <Element Offset="3948" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000F6C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3956" Vartype="String" Bytesize="11" OffsetHex="00000F74" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3967" Vartype="Byte" Bytesize="1" OffsetHex="00000F7F" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3968" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F80" DisplayMethod="Hex"/>
+        <Element Offset="3972" Vartype="Pointer" Bytesize="4" OffsetHex="00000F84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3976" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F88" DisplayMethod="Hex"/>
+        <Element Offset="3980" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000F8C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3988" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F94" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3992" Vartype="Pointer" Bytesize="4" OffsetHex="00000F98" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3996" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F9C" DisplayMethod="Hex"/>
+        <Element Offset="4000" Vartype="Pointer" Bytesize="4" OffsetHex="00000FA0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4004" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000FA4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4016" Vartype="Double" Bytesize="8" OffsetHex="00000FB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4024" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FB8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4028" Vartype="String" Bytesize="8" OffsetHex="00000FBC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4036" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000FC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4044" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FCC" DisplayMethod="Hex"/>
+        <Element Offset="4048" Vartype="Pointer" Bytesize="4" OffsetHex="00000FD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4052" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FD4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4056" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FD8" DisplayMethod="Hex"/>
+        <Element Offset="4060" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000FDC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4068" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FE4" DisplayMethod="Hex"/>
+        <Element Offset="4072" Vartype="Pointer" Bytesize="4" OffsetHex="00000FE8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4076" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FEC" DisplayMethod="Hex"/>
+        <Element Offset="4080" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000FF0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4088" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FF8" DisplayMethod="Hex"/>
+        <Element Offset="4092" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000FFC" DisplayMethod="Số nguyên chưa ký"/>
+      </Elements>
+    </Structure>
+    <Structure Name="cấu trúc không tên" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="Pointer" Bytesize="4" OffsetHex="00000000" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000004" DisplayMethod="Hex"/>
+        <Element Offset="8" Vartype="String" Bytesize="8" OffsetHex="00000008" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="16" Vartype="4 Bytes" Bytesize="4" RLECount="14" OffsetHex="00000010" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="72" Vartype="Float" Bytesize="4" OffsetHex="00000048" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="76" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000004C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="80" Vartype="Double" Bytesize="8" RLECount="2" OffsetHex="00000050" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="96" Vartype="Float" Bytesize="4" RLECount="2" OffsetHex="00000060" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="104" Vartype="Double" Bytesize="8" OffsetHex="00000068" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="112" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000070" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="124" Vartype="Float" Bytesize="4" OffsetHex="0000007C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="128" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000080" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="160" Vartype="Pointer" Bytesize="4" OffsetHex="000000A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" RLECount="63" OffsetHex="000000A4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="416" Vartype="Pointer" Bytesize="4" RLECount="78" OffsetHex="000001A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="728" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="000002D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="740" Vartype="String" Bytesize="11" OffsetHex="000002E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="751" Vartype="Byte" Bytesize="1" OffsetHex="000002EF" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="752" Vartype="Pointer" Bytesize="4" RLECount="5" OffsetHex="000002F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="772" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000304" DisplayMethod="Hex"/>
+        <Element Offset="776" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000308" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="784" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="00000310" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="808" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000328" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="812" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000032C" DisplayMethod="Hex"/>
+        <Element Offset="816" Vartype="String" Bytesize="12" OffsetHex="00000330" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="828" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="0000033C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="852" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000354" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="860" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="0000035C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="884" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000374" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="888" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000378" DisplayMethod="Hex"/>
+        <Element Offset="892" Vartype="String" Bytesize="15" OffsetHex="0000037C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="907" Vartype="Byte" Bytesize="1" OffsetHex="0000038B" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="908" Vartype="Pointer" Bytesize="4" RLECount="5" OffsetHex="0000038C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="928" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003A0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="936" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="000003A8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="960" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003C0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="964" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003C4" DisplayMethod="Hex"/>
+        <Element Offset="968" Vartype="String" Bytesize="18" OffsetHex="000003C8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="986" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="000003DA" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="988" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="000003DC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1000" Vartype="4 Bytes" Bytesize="4" OffsetHex="000003E8" DisplayMethod="Hex"/>
+        <Element Offset="1004" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000003EC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1012" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="000003F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1036" Vartype="Double" Bytesize="8" OffsetHex="0000040C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1044" Vartype="String" Bytesize="13" OffsetHex="00000414" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1057" Vartype="String" Bytesize="5" OffsetHex="00000421" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1062" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000426" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1064" Vartype="Pointer" Bytesize="4" RLECount="3" OffsetHex="00000428" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1076" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000434" DisplayMethod="Hex"/>
+        <Element Offset="1080" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000438" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1088" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="00000440" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1112" Vartype="Float" Bytesize="4" OffsetHex="00000458" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1116" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000045C" DisplayMethod="Hex"/>
+        <Element Offset="1120" Vartype="String" Bytesize="14" OffsetHex="00000460" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1134" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="0000046E" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1136" Vartype="Pointer" Bytesize="4" RLECount="5" OffsetHex="00000470" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1156" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000484" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1164" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="0000048C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1188" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004A4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1192" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004A8" DisplayMethod="Hex"/>
+        <Element Offset="1196" Vartype="String" Bytesize="12" OffsetHex="000004AC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1208" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004B8" DisplayMethod="Hex"/>
+        <Element Offset="1212" Vartype="Pointer" Bytesize="4" RLECount="4" OffsetHex="000004BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1228" Vartype="4 Bytes" Bytesize="4" OffsetHex="000004CC" DisplayMethod="Hex"/>
+        <Element Offset="1232" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000004D0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1240" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="000004D8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1264" Vartype="Double" Bytesize="8" OffsetHex="000004F0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1272" Vartype="String" Bytesize="7" OffsetHex="000004F8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1279" Vartype="String" Bytesize="5" OffsetHex="000004FF" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1284" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000504" DisplayMethod="Số nguyên đã ký"/>
+        <Element Offset="1288" Vartype="Pointer" Bytesize="4" RLECount="4" OffsetHex="00000508" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1304" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000518" DisplayMethod="Hex"/>
+        <Element Offset="1308" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000051C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1316" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="00000524" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1340" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000053C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1344" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000540" DisplayMethod="Hex"/>
+        <Element Offset="1348" Vartype="String" Bytesize="22" OffsetHex="00000544" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1370" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="0000055A" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1372" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="0000055C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1380" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000564" DisplayMethod="Hex"/>
+        <Element Offset="1384" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000568" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1392" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="00000570" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1416" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000588" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1420" Vartype="4 Bytes" Bytesize="4" OffsetHex="0000058C" DisplayMethod="Hex"/>
+        <Element Offset="1424" Vartype="String" Bytesize="23" OffsetHex="00000590" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1447" Vartype="Byte" Bytesize="1" OffsetHex="000005A7" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1448" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="000005A8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1456" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="000005B0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1460" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000005B4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1468" Vartype="Pointer" Bytesize="4" RLECount="6" OffsetHex="000005BC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1492" Vartype="4 Bytes" Bytesize="4" OffsetHex="000005D4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1496" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="000005D8" DisplayMethod="Hex"/>
+        <Element Offset="1504" Vartype="4 Bytes" Bytesize="4" RLECount="10" OffsetHex="000005E0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1544" Vartype="Pointer" Bytesize="4" RLECount="4" OffsetHex="00000608" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1560" Vartype="4 Bytes" Bytesize="4" RLECount="55" OffsetHex="00000618" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1780" Vartype="Float" Bytesize="4" OffsetHex="000006F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1784" Vartype="4 Bytes" Bytesize="4" OffsetHex="000006F8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1788" Vartype="Double" Bytesize="8" OffsetHex="000006FC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1796" Vartype="4 Bytes" Bytesize="4" RLECount="8" OffsetHex="00000704" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1828" Vartype="Float" Bytesize="4" OffsetHex="00000724" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1832" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000728" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1836" Vartype="Float" Bytesize="4" RLECount="2" OffsetHex="0000072C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1844" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000734" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1848" Vartype="Float" Bytesize="4" RLECount="5" OffsetHex="00000738" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1868" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="0000074C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="1876" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000754" DisplayMethod="Hex"/>
+        <Element Offset="1880" Vartype="4 Bytes" Bytesize="4" RLECount="34" OffsetHex="00000758" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2016" Vartype="4 Bytes" Bytesize="4" OffsetHex="000007E0" DisplayMethod="Hex"/>
+        <Element Offset="2020" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="000007E4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2036" Vartype="Byte" Bytesize="1" RLECount="4" OffsetHex="000007F4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2040" Vartype="4 Bytes" Bytesize="4" RLECount="15" OffsetHex="000007F8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2100" Vartype="Float" Bytesize="4" OffsetHex="00000834" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2104" Vartype="4 Bytes" Bytesize="4" RLECount="77" OffsetHex="00000838" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2412" Vartype="Double" Bytesize="8" OffsetHex="0000096C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="2420" Vartype="4 Bytes" Bytesize="4" RLECount="206" OffsetHex="00000974" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3244" Vartype="Float" Bytesize="4" OffsetHex="00000CAC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3248" Vartype="Pointer" Bytesize="4" OffsetHex="00000CB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3252" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000CB4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3264" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000CC0" DisplayMethod="Hex"/>
+        <Element Offset="3268" Vartype="4 Bytes" Bytesize="4" RLECount="7" OffsetHex="00000CC4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3296" Vartype="Pointer" Bytesize="4" OffsetHex="00000CE0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3300" Vartype="Pointer" Bytesize="4" OffsetHex="00000CE4" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3304" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000CE8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3312" Vartype="Pointer" Bytesize="4" OffsetHex="00000CF0" Description="Con trỏ tới bản sao của ??$_Func_impl@U?$_Callable_obj@V&lt;lambda_64dcf23f96082526587b48aef9c91d5b&gt;@@$0A@@std@@V?$allocator@V?$_Func_class@I$$$V@std@@@2@I$$$V@std@@" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3316" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000CF4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3320" Vartype="Pointer" Bytesize="4" OffsetHex="00000CF8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3324" Vartype="Pointer" Bytesize="4" OffsetHex="00000CFC" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3328" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000D00" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3336" Vartype="Pointer" Bytesize="4" OffsetHex="00000D08" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_d40ba2e43164453815912d04977ae446&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;unsigned int,unsigned int&gt; &gt;,unsigned int,unsigned int&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3340" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3344" Vartype="Pointer" Bytesize="4" OffsetHex="00000D10" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3348" Vartype="Pointer" Bytesize="4" OffsetHex="00000D14" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3352" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000D18" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3360" Vartype="Pointer" Bytesize="4" OffsetHex="00000D20" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_453d3a1d2d34755bccf62a73763ff64a&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;ResourceHandle&lt;SpineData&gt;,unsigned int&gt; &gt;,ResourceHandle&lt;SpineData&gt;,unsigned int&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3364" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3368" Vartype="Pointer" Bytesize="4" OffsetHex="00000D28" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3372" Vartype="Pointer" Bytesize="4" OffsetHex="00000D2C" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3376" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3380" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D34" DisplayMethod="Hex"/>
+        <Element Offset="3384" Vartype="Pointer" Bytesize="4" OffsetHex="00000D38" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_589b10ba761d27cd7bf52e3238550516&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;FixedLengthString&lt;64&gt;,unsigned int&gt; &gt;,FixedLengthString&lt;64&gt;,unsigned int&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3388" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D3C" DisplayMethod="Hex"/>
+        <Element Offset="3392" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000D40" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3412" Vartype="Pointer" Bytesize="4" OffsetHex="00000D54" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3416" Vartype="4 Bytes" Bytesize="4" RLECount="11" OffsetHex="00000D58" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3460" Vartype="Pointer" Bytesize="4" OffsetHex="00000D84" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3464" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000D88" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3468" Vartype="Pointer" Bytesize="4" OffsetHex="00000D8C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3472" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000D90" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3480" Vartype="Pointer" Bytesize="4" RLECount="5" OffsetHex="00000D98" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3500" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000DAC" DisplayMethod="Hex"/>
+        <Element Offset="3504" Vartype="4 Bytes" Bytesize="4" RLECount="18" OffsetHex="00000DB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3576" Vartype="Pointer" Bytesize="4" OffsetHex="00000DF8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3580" Vartype="4 Bytes" Bytesize="4" RLECount="3" OffsetHex="00000DFC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3592" Vartype="Pointer" Bytesize="4" OffsetHex="00000E08" Description="Con trỏ tới bản sao của HeroClass" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3596" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000E0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3612" Vartype="Byte" Bytesize="1" OffsetHex="00000E1C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3613" Vartype="String" Bytesize="5" OffsetHex="00000E1D" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3618" Vartype="Byte" Bytesize="1" RLECount="2" OffsetHex="00000E22" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3620" Vartype="4 Bytes" Bytesize="4" RLECount="16" OffsetHex="00000E24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3684" Vartype="Pointer" Bytesize="4" RLECount="16" OffsetHex="00000E64" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3748" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EA4" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3752" Vartype="Pointer" Bytesize="4" OffsetHex="00000EA8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3756" Vartype="4 Bytes" Bytesize="4" RLECount="7" OffsetHex="00000EAC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3784" Vartype="Pointer" Bytesize="4" OffsetHex="00000EC8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3788" Vartype="4 Bytes" Bytesize="4" RLECount="5" OffsetHex="00000ECC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3808" Vartype="Pointer" Bytesize="4" OffsetHex="00000EE0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3812" Vartype="Pointer" Bytesize="4" OffsetHex="00000EE4" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3816" Vartype="Pointer" Bytesize="4" OffsetHex="00000EE8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3820" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EEC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3824" Vartype="Pointer" Bytesize="4" OffsetHex="00000EF0" Description="Con trỏ tới bản sao của ??$_Func_impl@U?$_Callable_obj@V&lt;lambda_2fb8a8c005ecd5c05a094e39fc925beb&gt;@@$0A@@std@@V?$allocator@V?$_Func_class@I$$$V@std@@@2@I$$$V@std@@" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3828" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000EF4" DisplayMethod="Hex"/>
+        <Element Offset="3832" Vartype="Pointer" Bytesize="4" OffsetHex="00000EF8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3836" Vartype="Pointer" Bytesize="4" OffsetHex="00000EFC" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3840" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F00" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3844" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F04" DisplayMethod="Hex"/>
+        <Element Offset="3848" Vartype="Pointer" Bytesize="4" OffsetHex="00000F08" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_8acff47ea0b17dee49aa627fff58f3fb&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;unsigned int,unsigned int&gt; &gt;,unsigned int,unsigned int&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3852" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F0C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3856" Vartype="Pointer" Bytesize="4" OffsetHex="00000F10" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3860" Vartype="Pointer" Bytesize="4" OffsetHex="00000F14" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3864" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F18" DisplayMethod="Hex"/>
+        <Element Offset="3868" Vartype="Pointer" Bytesize="4" OffsetHex="00000F1C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3872" Vartype="Pointer" Bytesize="4" OffsetHex="00000F20" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_5c5f5fdf53a958c337a5e74674680c14&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;ResourceHandle&lt;SpineData&gt;,unsigned int&gt; &gt;,ResourceHandle&lt;SpineData&gt;,unsigned int&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3876" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F24" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3880" Vartype="Pointer" Bytesize="4" OffsetHex="00000F28" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3884" Vartype="Pointer" Bytesize="4" OffsetHex="00000F2C" Description="Con trỏ tới bản sao của Hero" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3888" Vartype="Pointer" Bytesize="4" OffsetHex="00000F30" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3892" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F34" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3896" Vartype="Pointer" Bytesize="4" OffsetHex="00000F38" Description="Con trỏ tới bản sao của std::_Func_impl&lt;std::_Callable_obj&lt;&lt;lambda_6eea71ab9770f6484ce3364164450c0c&gt;,0&gt;,std::allocator&lt;std::_Func_class&lt;FixedLengthString&lt;64&gt;,unsigned int&gt; &gt;,FixedLengthString&lt;64&gt;,unsigned int&gt;" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3900" Vartype="4 Bytes" Bytesize="4" OffsetHex="00000F3C" DisplayMethod="Hex"/>
+        <Element Offset="3904" Vartype="4 Bytes" Bytesize="4" RLECount="7" OffsetHex="00000F40" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3932" Vartype="Pointer" Bytesize="4" OffsetHex="00000F5C" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3936" Vartype="4 Bytes" Bytesize="4" RLECount="4" OffsetHex="00000F60" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3952" Vartype="Pointer" Bytesize="4" OffsetHex="00000F70" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="3956" Vartype="4 Bytes" Bytesize="4" RLECount="13" OffsetHex="00000F74" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4008" Vartype="Pointer" Bytesize="4" RLECount="2" OffsetHex="00000FA8" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4016" Vartype="4 Bytes" Bytesize="4" RLECount="7" OffsetHex="00000FB0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4044" Vartype="Pointer" Bytesize="4" OffsetHex="00000FCC" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4048" Vartype="4 Bytes" Bytesize="4" RLECount="10" OffsetHex="00000FD0" DisplayMethod="Số nguyên chưa ký"/>
+        <Element Offset="4088" Vartype="4 Bytes" Bytesize="4" RLECount="2" OffsetHex="00000FF8" DisplayMethod="Hex"/>
+      </Elements>
+    </Structure>
+  </Structures>
+</CheatTable>
